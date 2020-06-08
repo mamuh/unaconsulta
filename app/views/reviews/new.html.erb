@@ -1,0 +1,10 @@
+<%= simple_form_for(@review) do |f| %>
+<%# Start of inputs %>
+<%= f.input :content %>
+<%= f.input :stars, input_html: { type: 'number', min: '1', max: '5', step: '1' } %>
+<%= f.input :checkin %>
+<%= f.input :checkout %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
+<%= f.submit %>
+<%# End of inputs %>
+<% end %>
