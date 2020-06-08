@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :property
+  has_many_attached :photos
 
   validates :checkin, presence: true
   validates :checkout, presence: true

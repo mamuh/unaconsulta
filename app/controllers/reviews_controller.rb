@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:reviews).permit(:content, :stars, :checkin, :checkout)
+    params.require(:reviews).permit(:content, :stars, :checkin, :checkout, photos: [])
   end
 
 end
