@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_06_08_204959) do
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
