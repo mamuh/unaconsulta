@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @review.build_property
   end
 
   def create
