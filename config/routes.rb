@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  get 'profile', to: 'pages#profile'
 end

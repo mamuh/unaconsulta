@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @properties = Property.all.sample(3)
   end
+
+  def profile
+  end
 end
