@@ -1,0 +1,20 @@
+<div class="container">
+
+  <% @property.reviews.each do |review| %>
+
+      <% review.photos.each do |photo| %>
+        <%= cl_image_tag(photo.key, crop: :fit, width: 300) %>
+      <% end %>
+
+
+      <div class="card-review">
+        <div>
+          <strong>Reviewed by <%= review.user.name.capitalize %></strong>
+          <p><%= review.stars %></p>
+        </div>
+        <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
+        <p><%= review.content %></p>
+      </div>
+  <% end %>
+
+</div>
