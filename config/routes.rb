@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, except: %i(index show)
   end
 
+  get 'profile', to: 'pages#profile'
+
   resources :reviews, only: [:destroy]
-  resources :users, only: [:show]
 end

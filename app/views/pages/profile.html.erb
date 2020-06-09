@@ -1,0 +1,33 @@
+<div class='d-flex'>
+  <div class="card cards" style="width: 18rem;">
+    <!-- <img src="" class="card-img-top" alt="..."> -->
+      <div class="photo">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, width: 200, height: 200, class: "avatar-lg" %>
+        <% else %>
+          <img src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4"
+            class="avatar-lg" alt="" width="200">
+        <% end %>
+      </div>
+       <div class="user-name">
+        <h1><%= current_user.name %></h1>
+          <p><%= current_user.email %></p>
+          <p>Our member since: <%= current_user.created_at.strftime("%d-%m-%Y") %></p>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">All reviews</a>
+    </div>
+  </div>
+  <div class="profile">
+    <h1>Oi, Eu sou <%= current_user.name  %></h1>
+    <h2>My reviews</h2>
+
+    <div class="card">
+      <div class="card-body">
+        Isto é um texto dentro de um card.
+      </div>
+    </div>
+  </div>
+</div>
