@@ -34,4 +34,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initAutocomplete();
+  // const form = document.getElementById('form-map');
+  // form.addEventListener('keyup', code);
 });
