@@ -14,21 +14,33 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [-79.4512, 43.6568]
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
+    if (markers.length >= 1) {
+      markers.forEach((marker) => {
+      code(map, marker)
+      });
 
-  fitMapToMarkers(map, markers);
+      fitMapToMarkers(map, markers);
+      }
 
-  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl }));
+
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //   mapboxgl: mapboxgl }));
   }
-};
 
-export { initMapbox };
+
+
+};
+  const code = (map, marker) => {
+    new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+  }
+
+
+
+export { initMapbox, code };

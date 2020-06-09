@@ -11,7 +11,7 @@ class PropertiesController < ApplicationController
       }
     end
   end
-  
+
   def show
   end
 
@@ -23,11 +23,10 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.user = current_user
-    
     if @property.save
-      redirect_to new_property_review_path(@property)
+      redirect_to properties_path
     else
-      render "new"
+      raise
     end
   end
 
