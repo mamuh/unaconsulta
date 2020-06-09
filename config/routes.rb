@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :reviews, except: %i(index show)
   end
 
+  resources :reviews, only: [:destroy]
   resources :users, only: [:show]
 end

@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @property = Property.find(params[:property_id])
   end
 
   def update
@@ -29,8 +30,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @property = @review.property
     @review.destroy
-    redirect_to @properties_path
+    redirect_to @property
   end
 
   private
