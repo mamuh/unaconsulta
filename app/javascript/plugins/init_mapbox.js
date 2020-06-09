@@ -18,16 +18,19 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
+    if (markers.length >= 1) {
+      markers.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+      });
 
-  fitMapToMarkers(map, markers);
+      fitMapToMarkers(map, markers);
+    }
 
-  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl }));
+
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl }));
   }
 };
 
