@@ -4,11 +4,12 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @property = Property.find(params[:property_id])
   end
 
   def create
     @review = Review.new(review_params)
-    @property = Property.find(params[:property.id])
+    @property = Property.find(params[:property_id])
     @review.property = @property
     @review.user = current_user
     if @review.save
@@ -39,7 +40,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:reviews).permit(:content, :stars, :checkin, :checkout, photos: [])
+    params.require(:review).permit(:content, :stars, :checkin, :checkout, photos: [])
   end
 
 end
