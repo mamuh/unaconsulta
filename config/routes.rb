@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   get 'profile', to: 'pages#profile'
+
+  resources :reviews, only: [:destroy]
 end

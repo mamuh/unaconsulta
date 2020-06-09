@@ -1,20 +1,23 @@
 <div class="container">
-
+<div>
   <% @property.reviews.each do |review| %>
 
-      <% review.photos.each do |photo| %>
-        <%= cl_image_tag(photo.key, crop: :fit, width: 300) %>
-      <% end %>
+    <% review.photos.each do |photo| %>
+      <%= cl_image_tag(photo.key, crop: :fit, width: 200) %>
+    <% end %>
 
 
-      <div class="card-review">
-        <div>
-          <strong>Reviewed by <%= review.user.name.capitalize %></strong>
-          <p><%= review.stars %></p>
-        </div>
-        <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
-        <p><%= review.content %></p>
+    <div class="card-review">
+      <div class="d-flex justify-content-between">
+        <strong>Reviewed by <%= review.user.name.capitalize %></strong>
+        <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
       </div>
+      <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
+      <p><%= review.content %></p>
+      <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
+      <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+    </div>
   <% end %>
-
+</div>
+<%= link_to  "Leave a review",  new_property_review_path(@property) %>
 </div>
