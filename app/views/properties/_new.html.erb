@@ -1,4 +1,4 @@
 <%= simple_form_for @property, html: { id: "form-map" } do |f| %>
-  <%= f.input :address, input_html: { class: "user_input" } %>
+  <%= f.input :address, input_html: { class: "user_input", value: @query } %>
   <%= f.button :submit %>
 <% end %>

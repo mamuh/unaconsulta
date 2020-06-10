@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @properties_sample = Property.all.sample(3)
     @properties = Property.new
     if params[:query].present?
-      puts params[:query]
+
     end
   end
 
