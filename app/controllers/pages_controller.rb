@@ -3,7 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @properties_sample = Property.all.sample(3)
-    @properties = Property.geocoded
+    @properties = Property.new
+    if params[:query].present?
+      puts params[:query]
+    end
   end
 
   def profile

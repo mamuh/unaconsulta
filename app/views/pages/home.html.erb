@@ -2,16 +2,33 @@
 
 
 
-  <%= simple_form_for @properties do |f| %>
+<!--   <%= simple_form_for @properties do |f| %>
 
     <div class="form-inputs">
-      <%= f.input :address %>
+      <%= f.input :address, input_html: { class: "user_input" } %>
     </div>
 
     <div class="form-actions">
       <%= f.button :submit %>
     </div>
   <% end %>
+ -->
+
+<h2>Find a property?</h2>
+<div class="form-group form-inline justify-content-center">
+  <%= form_tag properties_path, id: "main-form", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control user_input",
+    placeholder: "Find a property"
+  %>
+
+
+  <button id="find">Find a property</button>
+  <button id="leave-review">Leave a review</button>
+  <% end %>
+</div>
+
 
 
 <%= render 'shared/card' %>
