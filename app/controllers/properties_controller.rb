@@ -10,6 +10,13 @@ class PropertiesController < ApplicationController
         lng: prop.longitude
       }
     end
+    if params[:query].present?
+      @properties = @properties.search_by_address(params[:query])
+      if @properties.empty?
+        flash[:alert] = "There is no reviews for this property."
+        redirect_to properties_path
+      end
+    end
   end
 
   def show

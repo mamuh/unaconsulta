@@ -23,7 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'geocoder'
-
+gem 'pg_search', '~> 2.3.0'
 #Cloudinary gem
 gem 'cloudinary', '~> 1.12.0'
 
