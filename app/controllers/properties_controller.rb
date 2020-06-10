@@ -3,20 +3,21 @@ class PropertiesController < ApplicationController
   #Shows all properties
   def index
     @properties = Property.geocoded
-    @property = Property.new
     @markers = @properties.map do |prop|
       {
         lat: prop.latitude,
         lng: prop.longitude
       }
     end
-    if params[:query].present?
-      @properties = @properties.search_by_address(params[:query])
-      if @properties.empty?
-        flash[:alert] = "There is no reviews for this property yet."
-        redirect_to properties_path
-      end
-    end
+    # if params[:query].present?
+    #   @properties = @properties.search_by_address(params[:query])
+    #   if @properties.empty?
+    #     flash[:alert] = "There is no reviews for this property yet."
+    #     redirect_to new_property_path
+    #   else
+    #     redirect_to new_review_path
+    #   end
+    # end
   end
 
   def show
@@ -28,6 +29,11 @@ class PropertiesController < ApplicationController
     if params[:query].present?
       @properties = @properties.search_by_address(params[:query])
 
+      if @properties.empty?
+        flash[:alert] = "There is no reviews for this property."
+        # redirect_to properties_find_path
+      end
+
       @markers = @properties.map do |prop|
         {
           lat: prop.latitude,
@@ -35,15 +41,26 @@ class PropertiesController < ApplicationController
         }
       end
 
-      if @properties.empty?
-        flash[:alert] = "There is no reviews for this property."
-        redirect_to properties_find_path
-      end
     end
   end
 
   def new
+    @query = params[:query]
+    @properties = Property.geocoded
     @property = Property.new
+    @markers = @properties.map do |prop|
+      {
+        lat: prop.latitude,
+        lng: prop.longitude
+      }
+    end
+    # if params[:query].present?
+    #   @properties = @properties.search_by_address(params[:query])
+    #   if @properties.empty?
+    #     flash[:alert] = "There is no reviews for this property yet."
+    #     redirect_to properties_path
+    #   end
+    # end
   end
 
   # Creates a new property only if the property does not exists
