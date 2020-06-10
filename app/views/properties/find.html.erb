@@ -7,9 +7,6 @@
       placeholder: "Find a property"
     %>
       <%= submit_tag "Search", remote: false, class: "btn btn-primary" %>
-      <% if @properties != Property.all %>
-        <%= link_to "Clear", properties_find_path, class: "btn btn-secondary" %>
-      <% end %>
     <% end %>
   </div>
 
@@ -27,4 +24,4 @@
   </div>
   <% end %>
 
-
+<%= link_to "Leave a review for this property", new_property_path, class: "btn btn-success" %>
