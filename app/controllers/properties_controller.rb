@@ -13,13 +13,33 @@ class PropertiesController < ApplicationController
     if params[:query].present?
       @properties = @properties.search_by_address(params[:query])
       if @properties.empty?
-        flash[:alert] = "There is no reviews for this property."
+        flash[:alert] = "There is no reviews for this property yet."
         redirect_to properties_path
       end
     end
   end
 
   def show
+  end
+
+  def find
+    @properties = Property.geocoded
+    @property = Property.new
+    if params[:query].present?
+      @properties = @properties.search_by_address(params[:query])
+
+      @markers = @properties.map do |prop|
+        {
+          lat: prop.latitude,
+          lng: prop.longitude
+        }
+      end
+
+      if @properties.empty?
+        flash[:alert] = "There is no reviews for this property."
+        redirect_to properties_find_path
+      end
+    end
   end
 
   def new

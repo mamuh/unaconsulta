@@ -1,0 +1,30 @@
+<h2>Search for previous reviews</h2>
+  <div class="form-group form-inline justify-content-center">
+    <%= form_tag properties_find_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "user_input",
+      placeholder: "Find a property"
+    %>
+      <%= submit_tag "Search", remote: false, class: "btn btn-primary" %>
+      <% if @properties != Property.all %>
+        <%= link_to "Clear", properties_find_path, class: "btn btn-secondary" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="map"
+       style="width: 100%; height: 400px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <% @properties.each do |prop| %>
+  <div>
+    <%= link_to prop.address, property_path(prop) %> |
+    <%= prop.latitude %> |
+    <%= prop.longitude %>
+  </div>
+  <% end %>
+
+
