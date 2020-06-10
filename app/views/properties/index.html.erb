@@ -1,4 +1,5 @@
 <%= render 'new' %>
+<%= render 'find' %>
 
 <div id="map"
      style="width: 100%; height: 400px;"
@@ -9,9 +10,10 @@
 
 
   <% @properties.each do |prop| %>
-<div>
-  <%= prop.address %> |
-  <%= prop.latitude %> |
-  <%= prop.longitude %>
-</div>
+  <div>
+    <%= link_to prop.address, property_path(prop) %> |
+    <%= prop.latitude %> |
+    <%= prop.longitude %>
+  </div>
   <% end %>
+  

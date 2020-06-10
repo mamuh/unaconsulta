@@ -1,0 +1,14 @@
+<!-- <h2>Search for previous reviews</h2>
+  <div class="form-group form-inline justify-content-center">
+    <%= form_tag properties_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "user_input",
+      placeholder: "Find a property"
+    %>
+      <%= submit_tag "Search", remote: false, class: "btn btn-primary" %>
+      <% if @properties != Property.all %>
+        <%= link_to "Clear", properties_path, class: "btn btn-secondary" %>
+      <% end %>
+    <% end %>
+  </div> -->
