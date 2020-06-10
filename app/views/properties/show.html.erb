@@ -15,8 +15,10 @@
       </div>
       <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
       <p><%= review.content %></p>
-      <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
-      <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+      <% if current_user == review.user %>
+        <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
+        <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+      <% end %>
     </div>
   <% end %>
 </div>
