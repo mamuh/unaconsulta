@@ -48,12 +48,11 @@ class PropertiesController < ApplicationController
     @query = params[:query]
     @properties = Property.geocoded
     @property = Property.new
-    @markers = @properties.map do |prop|
+    @markers = [
       {
-        lat: prop.latitude,
-        lng: prop.longitude
-      }
-    end
+        lat: @properties.last.latitude,
+        lng: @properties.last.longitude
+      }]
     # if params[:query].present?
     #   @properties = @properties.search_by_address(params[:query])
     #   if @properties.empty?
