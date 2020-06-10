@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_review, only: [:edit, :destroy]
+  before_action :set_review, only: [:edit, :destroy, :update]
 
   def new
     @review = Review.new
@@ -25,8 +25,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @property = Property.find(params[:property_id])
     @review.update(review_params)
-    redirect_to @property
+    redirect_to property_path(@property)
   end
 
   def destroy
