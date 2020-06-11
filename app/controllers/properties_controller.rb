@@ -59,6 +59,7 @@ class PropertiesController < ApplicationController
     @query = params[:query]
     @properties = Property.geocoded
     @property = Property.new(address: @query)
+    @review = Review.new
     @property_markers = @property.geocode
     @markers = [
       {

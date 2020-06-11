@@ -1,6 +1,8 @@
-<h2><%= @properties.size %> properties matched your search.</h2>
 <% if @properties.size == 0 %>
+  <h2>No properties matched your search for "<%= @query %>"</h2>
   <h2><%= link_to "Be the first to review it", {action: "new",  query: params[:query] }  %></h2>
+<% else %>
+  <h2><%= @properties.size %> properties matched your search.</h2>
 <% end %>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag properties_find_path, method: :get do %>
