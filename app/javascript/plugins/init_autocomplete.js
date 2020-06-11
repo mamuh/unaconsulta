@@ -24,7 +24,7 @@ const initAutocomplete = () => {
 
           }
         code(map, marker);
-        map.flyTo({center: [e.suggestion.latlng.lng, e.suggestion.latlng.lat], zoom: 9});
+        map.flyTo({center: [e.suggestion.latlng.lng, e.suggestion.latlng.lat], zoom: 13});
       };
     });
   }

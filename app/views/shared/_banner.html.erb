@@ -1,3 +1,17 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Breakfast
-</div>
+
+<header>
+  <h2>Find a property or leave a review</h2>
+  <div class="form-group form-inline justify-content-center">
+    <%= form_tag nil, id: "main-form", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control user_input",
+      placeholder: "Find a property",
+      required: true
+    %>
+
+    <button id="find">Find a property</button>
+    <button id="leave-review">Leave a review</button>
+    <% end %>
+  </div>
+</header>

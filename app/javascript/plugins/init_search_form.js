@@ -1,21 +1,21 @@
 const code = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   const form = document.getElementById('main-form');
   form.action = '/properties/new';
-  form.submit();
+  // form.submit();
 }
 
 const code2 = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   const form = document.getElementById('main-form');
   form.action = 'properties/find';
-  form.submit();
+  // form.submit();
 }
 
 const initSearchForm = () => {
   const leave = document.getElementById('leave-review');
   const find = document.getElementById('find');
-  $(".alert" ).fadeOut(6000);
+  $(".alert" ).fadeOut(12000);
   // const form = document.getElementById('main-form');
   // if (form) {
   //   form.preventDefault;

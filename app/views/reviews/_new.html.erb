@@ -1,4 +1,9 @@
-<h2>Reviewing property in <%= @property.address %></h2>
+<% if @property.reviews.size == 0 %>
+  <h2>Be the first to review this property</h2>
+<% else %>
+  <h2>Leave another review for this property</h2>
+<% end %>
+
 <%= simple_form_for [@property, @review] do |f| %>
 <%# Start of inputs %>
   <%= f.input :content %>
@@ -6,6 +11,6 @@
   <%= f.input :checkin %>
   <%= f.input :checkout %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
+  <%= f.submit "Post review", class: "btn btn-primary" %>
 <%# End of inputs %>
 <% end %>

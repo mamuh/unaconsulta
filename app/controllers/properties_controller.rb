@@ -21,6 +21,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def find
@@ -30,8 +31,7 @@ class PropertiesController < ApplicationController
       @properties = @properties.search_by_address(params[:query])
 
       if @properties.empty?
-        flash[:alert] = "There is no reviews for this property."
-        # redirect_to properties_find_path
+        flash[:alert] = "There are no reviews for this property."
       end
 
       @markers = @properties.map do |prop|
@@ -47,11 +47,12 @@ class PropertiesController < ApplicationController
   def new
     @query = params[:query]
     @properties = Property.geocoded
-    @property = Property.new
+    @property = Property.new(address: @query)
+    @property_markers = @property.geocode
     @markers = [
       {
-        lat: @properties.last.latitude,
-        lng: @properties.last.longitude
+        lat: @property_markers[0],
+        lng: @property_markers[1]
       }]
     # if params[:query].present?
     #   @properties = @properties.search_by_address(params[:query])
