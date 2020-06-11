@@ -1,16 +1,25 @@
-.navbar-lewagon {
+.navbar-lewagon-home {
+	display: flex;
 	justify-content: space-between;
-	background: transparent;
-	width: 90%;
-	margin: 0 auto;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 16px 80px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-lewagon-home .navbar-collapse {
 	flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon-home .navbar-brand img {
 	width: 120px;
+}
+
+.navbar-lewagon-home a.nav-link {
+	color: #fff;
+	font-weight: bold;
 }
 
 // header nav {
