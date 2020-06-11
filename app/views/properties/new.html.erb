@@ -4,20 +4,19 @@
 <% end %>
 
 <div id="map"
-     style="width: 100%; height: 400px;"
+     style="width: 100%; height: 350px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 
 
-  <% @properties.each do |prop| %>
   <div>
-    <%= link_to prop.address, property_path(prop) %> |
-    <%= prop.latitude %> |
-    <%= prop.longitude %>
+    <%= link_to @properties.last.address, property_path(@properties.last) %> |
+    <%= @properties.last.latitude %> |
+    <%= @properties.last.longitude %>
   </div>
-  <% end %>
+
 
 
 

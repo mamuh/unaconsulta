@@ -1,6 +1,6 @@
 <h2><%= @properties.size %> properties matched your search.</h2>
 <% if @properties.size == 0 %>
-  <h2>Be the first to review it.</h2>
+  <h2>Be the first to review it. <%= link_to "new", new_property_path %></h2>
 <% end %>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag properties_find_path, method: :get do %>
@@ -21,10 +21,12 @@
 
   <% @properties.each do |prop| %>
   <div>
-    <%= link_to prop.address, property_path(prop) %> |
+    <%= link_to "Leave a review to #{prop.address}", property_path(prop) %> |
     <%= prop.latitude %> |
     <%= prop.longitude %> |
-    <%= link_to "See all reviews for this property", property_path(prop) %>
+    <% if prop.reviews.size > 0 %>
+      <%= link_to "See all reviews for this property", property_path(prop) %>
+    <% end %>
   </div>
   <% end %>
 
