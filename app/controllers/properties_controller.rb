@@ -22,24 +22,35 @@ class PropertiesController < ApplicationController
 
   def show
     @review = Review.new
+    # session[:my_previous_url] = URI(request.referer || '').path
+    # @back_url = session[:my_previous_url]
   end
 
   def find
+    @query = params[:query]
     @properties = Property.geocoded
-    @property = Property.new
+    # @property = Property.new
     if params[:query].present?
       @properties = @properties.search_by_address(params[:query])
 
-      if @properties.empty?
-        flash[:alert] = "There are no reviews for this property."
-      end
+      # if @properties.empty?
+      #   flash[:alert] = "There are no reviews for this property."
+      # end
 
-      @markers = @properties.map do |prop|
+      @property = Property.new(address: @query)
+      @property_markers = @property.geocode
+      @markers = [
         {
-          lat: prop.latitude,
-          lng: prop.longitude
-        }
-      end
+          lat: @property_markers[0],
+          lng: @property_markers[1]
+        }]
+
+      # @markers = @properties.map do |prop|
+      #   {
+      #     lat: prop.latitude,
+      #     lng: prop.longitude
+      #   }
+      # end
 
     end
   end
@@ -54,6 +65,7 @@ class PropertiesController < ApplicationController
         lat: @property_markers[0],
         lng: @property_markers[1]
       }]
+
     # if params[:query].present?
     #   @properties = @properties.search_by_address(params[:query])
     #   if @properties.empty?
