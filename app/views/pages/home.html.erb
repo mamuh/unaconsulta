@@ -1,6 +1,6 @@
 
 <header>
-  <h2>Find a property or leave a review</h2>
+  <h1>Find a property to see or leave reviews</h1>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag nil, id: "main-form", method: :get do %>
       <%= text_field_tag :query,
@@ -10,8 +10,8 @@
         required: true
       %>
 
-      <button id="find">Find a property</button>
-      <button id="leave-review">Leave a review</button>
+      <button id="find">Find property</button>
+      <button id="leave-review" style="display: none;">Leave a review</button>
     <% end %>
   </div>
 
