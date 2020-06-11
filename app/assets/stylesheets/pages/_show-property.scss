@@ -1,12 +1,3 @@
-  .main-photo {
-    height: 40vh;
-    background-image: url(<% if @property.reviews.last.photos.attached? %>
-      <%= cl_image_path @property.reviews.last.photos.first.key, crop: :fit, width: 700; %>
-      <% else %>
-      "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80"
-      <% end %>);
-  }
-
   .small-photos {
     height: 30vh;
     overflow: scroll;
