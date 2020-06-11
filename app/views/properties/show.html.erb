@@ -1,5 +1,8 @@
 <h1>Reviews for property in <%= @property.address.split(",").first %>, <%= @property.address.split(",")[-2] %></h1>
 
+<%= link_to "<< Back to search results", {action: "find",  query: @property.address }  %>
+
+<br><br>
 <div class="row">
   <div class="col-xs-12 col-lg-7">
 
@@ -49,9 +52,8 @@
 
 </div>
 
-<div class="mt-5 p-3">
-  <%= link_to "Leave a review", new_property_review_path(@property) %> |
-  <%= link_to "Back to search results", @back_url %>
+<div class="mt-2">
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary" %>
 </div>
 
 
