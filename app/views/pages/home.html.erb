@@ -1,17 +1,16 @@
-
 <header>
   <h1>Find a property to see or leave reviews</h1>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag nil, id: "main-form", method: :get do %>
-      <%= text_field_tag :query,
+    <%= text_field_tag :query,
         params[:query],
         class: "form-control user_input",
         placeholder: "Type a property address",
         required: true
       %>
 
-      <button id="find">Find property</button>
-      <button id="leave-review" style="display: none;">Leave a review</button>
+    <button id="find">Find property</button>
+    <button id="leave-review" style="display: none;">Leave a review</button>
     <% end %>
   </div>
 
@@ -35,40 +34,40 @@
  -->
 
 <main>
-    <!-- Card category section -->
-    <div class="card-container">
-      <div class="cards">
-        <!-- Card 1 -->
-        <div class="card-trip">
-          <img
-            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-          <div class="card-trip-infos">
-            <div>
-              <h2>Reviewed by John Doe</h2>
-            </div>
+  <!-- Card category section -->
+  <div class="card-container">
+    <div class="cards">
+      <!-- Card 1 -->
+      <div class="card-trip">
+        <img
+          src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Reviewed by John Doe</h2>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="card-trip">
-          <img
-            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-          <div class="card-trip-infos">
-            <div>
-              <h2>Reviewed by Lucy Adams</h2>
-            </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card-trip">
+        <img
+          src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Reviewed by Lucy Adams</h2>
           </div>
         </div>
-        <!-- Card 3 -->
-        <div class="card-trip">
-          <img
-            src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-          <div class="card-trip-infos">
-            <div>
-              <h2>Reviewed by Jane Smith</h2>
-            </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card-trip">
+        <img
+          src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Reviewed by Jane Smith</h2>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-  </main>
+</main>

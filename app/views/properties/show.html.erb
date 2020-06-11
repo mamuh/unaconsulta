@@ -1,30 +1,89 @@
-<h1>Reviews for this property in <%= @property.address %></h1>
-<div class="container">
-<div>
-  <% @property.reviews.each do |review| %>
+<h1>Reviews for property in <%= @property.address.split(",").first %>, <%= @property.address.split(",")[-2] %></h1>
 
-    <% review.photos.each do |photo| %>
-      <%= cl_image_tag(photo.key, crop: :fit, width: 200) %>
-    <% end %>
+<%= link_to "<< Back to search results", {action: "find",  query: @property.address }  %>
 
+<br><br>
+<div class="row">
+  <div class="col-xs-12 col-lg-7">
 
-    <div class="card-review">
-      <div class="d-flex justify-content-between">
-        <strong>Reviewed by <%= review.user.name.capitalize %></strong>
-        <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+    <div class="review-photos-container">
+
+      <div class="property-photos main-photo bg-dark mb-2 rounded">
       </div>
-      <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
-      <p><%= review.content %></p>
-      <% if current_user == review.user %>
-        <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
-        <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
-      <% end %>
+
+      <div class="property-photos small-photos d-flex justify-content-between flex-wrap align-items-center mb-3">
+        <% @property.reviews.each do |review| %>
+          <% review.photos.each do |photo| %>
+
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2" %>
+          <% end %>
+        <% end %>
+      </div>
+
     </div>
-  <% end %>
-</div>
-<div class="mt-5">
-  <%= link_to "Leave a review", new_property_review_path(@property) %> |
-  <%= link_to "Back to search results", @back_url %>
-</div>
+
+  </div>
+
+
+  <div class="review-content-container col-xs-12 col-lg-5">
+
+    <% @property.reviews.order("created_at desc").each do |review| %>
+
+      <div class="card-review bg-white p-3 rounded mb-3 shadow">
+        <div class="d-flex justify-content-between">
+          <strong>Reviewed by <%= review.user.name.capitalize %></strong>
+          <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+        </div>
+        <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
+        <p><%= review.content %></p>
+        <% if review.photos.attached? %>
+          <div class="thumb-photos py-2">
+            <% review.photos.each do |photo| %>
+              <%= cl_image_tag(photo.key, crop: :fit, width: 100) %>
+            <% end %>
+          </div>
+        <% end %>
+        <% if current_user == review.user %>
+
+            <%= link_to  "Edit",  edit_property_review_path(@property, review) %> |
+            <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
 
 </div>
+
+<div class="my-3">
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
+</div>
+
+
+
+<style type="text/css">
+  .main-photo {
+    height: 40vh;
+    background-image: url(<% if @property.reviews.last.photos.attached? %>
+      <%= cl_image_path @property.reviews.last.photos.first.key, crop: :fit, width: 700; %>
+      <% else %>
+      "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80"
+      <% end %>);
+  }
+
+  .small-photos {
+    height: 30vh;
+    overflow: scroll;
+  }
+
+  .fa-star {
+    color: #f2e63a;
+  }
+
+  .review-content-container {
+    height: 70vh;
+    overflow: scroll;
+  }
+
+</style>
