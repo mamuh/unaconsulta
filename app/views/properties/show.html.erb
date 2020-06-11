@@ -1,30 +1,63 @@
 <h1>Reviews for this property in <%= @property.address %></h1>
-<div class="container">
-<div>
-  <% @property.reviews.each do |review| %>
 
-    <% review.photos.each do |photo| %>
-      <%= cl_image_tag(photo.key, crop: :fit, width: 200) %>
-    <% end %>
+<div class="d-flex align-items-start justify-content-between flex-wrap">
 
+  <div class="review-photos-container d-flex flex-column flex-wrap w-25">
 
-    <div class="card-review">
-      <div class="d-flex justify-content-between">
-        <strong>Reviewed by <%= review.user.name.capitalize %></strong>
-        <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
-      </div>
-      <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
-      <p><%= review.content %></p>
-      <% if current_user == review.user %>
-        <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
-        <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+    <div class="property-photos main-photo bg-dark my-2">
+      <%= cl_image_tag(@property.reviews.last.photos.last.key, crop: :fill, width: 600, height: 300) %>
+    </div>
+
+    <div class="property-photos small-photos bg-dark d-flex justify-content-between flex-wrap">
+      <% @property.reviews.each do |review| %>
+        <% review.photos.each do |photo| %>
+            <%= cl_image_tag(photo.key, crop: :fill, width: 200, class: "mx-2") %>
+        <% end %>
       <% end %>
     </div>
-  <% end %>
+
+  </div>
+
+
+
+  <div class="review-content-container">
+
+    <% @property.reviews.each do |review| %>
+
+      <div class="card-review bg-light p-3 rounded my-3">
+        <div class="d-flex justify-content-between">
+          <strong>Reviewed by <%= review.user.name.capitalize %></strong>
+          <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+        </div>
+        <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
+        <p><%= review.content %></p>
+        <% if current_user == review.user %>
+          <%= link_to  "Edit",  edit_property_review_path(@property, review) %>
+          <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+        <% end %>
+        <% review.photos.each do |photo| %>
+          <%= cl_image_tag(photo.key, crop: :fit, width: 100) %>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+
 </div>
-<div class="mt-5">
+
+<div class="mt-5 p-3">
   <%= link_to "Leave a review", new_property_review_path(@property) %> |
   <%= link_to "Back to search results", @back_url %>
 </div>
 
-</div>
+
+
+<style type="text/css">
+  .property-photos {
+    height: 400px;
+  }
+
+  .small-photos {
+    height: 150px;
+  }
+</style>
