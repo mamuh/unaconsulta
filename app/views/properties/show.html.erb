@@ -27,7 +27,7 @@
 
   <div class="review-content-container col-xs-12 col-lg-5">
 
-    <% @property.reviews.each do |review| %>
+    <% @property.reviews.order("created_at desc").each do |review| %>
 
       <div class="card-review bg-white p-3 rounded mb-3 shadow">
         <div class="d-flex justify-content-between">
@@ -56,7 +56,7 @@
 
 </div>
 
-<div class="mt-2">
+<div class="my-3">
   <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
 </div>
 
@@ -65,10 +65,8 @@
 <style type="text/css">
   .main-photo {
     height: 40vh;
-    background-image: url(<% if @property.reviews.first.photos.attached? %>
-      <%= cl_image_path @property.reviews.first.photos.first.key, crop: :fit, width: 700; %>
-      <% elsif @property.reviews.first.photo.attached? %>
-      <%= cl_image_path @property.reviews.last.photo.key, crop: :fit, width: 700; %>
+    background-image: url(<% if @property.reviews.last.photos.attached? %>
+      <%= cl_image_path @property.reviews.last.photos.first.key, crop: :fit, width: 700; %>
       <% else %>
       "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80"
       <% end %>);
