@@ -1,15 +1,15 @@
 const code = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   const form = document.getElementById('main-form');
   form.action = '/properties/new';
-  form.submit();
+  // form.submit();
 }
 
 const code2 = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   const form = document.getElementById('main-form');
   form.action = 'properties/find';
-  form.submit();
+  // form.submit();
 }
 
 const initSearchForm = () => {

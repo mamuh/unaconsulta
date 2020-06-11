@@ -3,15 +3,15 @@
   <h2>Find a property or leave a review</h2>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag nil, id: "main-form", method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control user_input",
-      placeholder: "Find a property",
-      required: true
-    %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control user_input",
+        placeholder: "Type a property address",
+        required: true
+      %>
 
-    <button id="find">Find a property</button>
-    <button id="leave-review">Leave a review</button>
+      <button id="find">Find a property</button>
+      <button id="leave-review">Leave a review</button>
     <% end %>
   </div>
 
