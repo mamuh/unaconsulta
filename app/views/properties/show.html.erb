@@ -15,7 +15,7 @@
         <% @property.reviews.each do |review| %>
           <% review.photos.each do |photo| %>
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2", id: "small-pic" %>
           <% end %>
         <% end %>
       </div>
@@ -60,30 +60,33 @@
   <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
 </div>
 
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
 
 
-<style type="text/css">
-  .main-photo {
-    height: 40vh;
-    background-image: url(<% if @property.reviews.last.photos.attached? %>
-      <%= cl_image_path @property.reviews.last.photos.first.key, crop: :fit, width: 700; %>
-      <% else %>
-      "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80"
-      <% end %>);
-  }
 
-  .small-photos {
-    height: 30vh;
-    overflow: scroll;
-  }
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
 
-  .fa-star {
-    color: #f2e63a;
-  }
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("small-pic");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
 
-  .review-content-container {
-    height: 70vh;
-    overflow: scroll;
-  }
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-</style>
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
