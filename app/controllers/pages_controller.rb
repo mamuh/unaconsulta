@@ -4,9 +4,7 @@ class PagesController < ApplicationController
   def home
     @properties_sample = Property.all.sample(3)
     @properties = Property.new
-    if params[:query].present?
-
-    end
+    @home_page = true
   end
 
   def profile

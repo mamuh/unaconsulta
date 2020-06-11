@@ -15,7 +15,7 @@ const code2 = (event) => {
 const initSearchForm = () => {
   const leave = document.getElementById('leave-review');
   const find = document.getElementById('find');
-  $(".alert" ).fadeOut(6000);
+  $(".alert" ).fadeOut(12000);
   // const form = document.getElementById('main-form');
   // if (form) {
   //   form.preventDefault;

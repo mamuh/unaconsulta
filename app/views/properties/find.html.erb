@@ -1,4 +1,7 @@
-<h2>Search for previous reviews</h2>
+<h2><%= @properties.size %> properties matched your search.</h2>
+<% if @properties.size == 0 %>
+  <h2>Be the first to review it.</h2>
+<% end %>
   <div class="form-group form-inline justify-content-center">
     <%= form_tag properties_find_path, method: :get do %>
     <%= text_field_tag :query,
@@ -20,8 +23,8 @@
   <div>
     <%= link_to prop.address, property_path(prop) %> |
     <%= prop.latitude %> |
-    <%= prop.longitude %>
+    <%= prop.longitude %> |
+    <%= link_to "See all reviews for this property", property_review_path(prop) %>
   </div>
   <% end %>
 
-<%= link_to "Leave a review for this property", new_property_path, class: "btn btn-success" %>

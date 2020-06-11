@@ -1,20 +1,24 @@
-<%= render 'shared/banner' %>
+
+<header>
+  <h2>Find a property or leave a review</h2>
+  <div class="form-group form-inline justify-content-center">
+    <%= form_tag nil, id: "main-form", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control user_input",
+      placeholder: "Find a property",
+      required: true
+    %>
+
+    <button id="find">Find a property</button>
+    <button id="leave-review">Leave a review</button>
+    <% end %>
+  </div>
+
+</header>
 
 
-
-<!--   <%= simple_form_for @properties do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :address, input_html: { class: "user_input" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-  <% end %>
- -->
-
-<h2>Find a property?</h2>
+<!-- <h2>Find a property or leave a review</h2>
 <div class="form-group form-inline justify-content-center">
   <%= form_tag nil, id: "main-form", method: :get do %>
   <%= text_field_tag :query,
@@ -28,3 +32,43 @@
   <button id="leave-review">Leave a review</button>
   <% end %>
 </div>
+ -->
+
+<main>
+    <!-- Card category section -->
+    <div class="card-container">
+      <div class="cards">
+        <!-- Card 1 -->
+        <div class="card-trip">
+          <img
+            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>Reviewed by John Doe</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-trip">
+          <img
+            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>Reviewed by Lucy Adams</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-trip">
+          <img
+            src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>Reviewed by Jane Smith</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
