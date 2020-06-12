@@ -9,4 +9,8 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def user_reviews
+
+  end
 end
