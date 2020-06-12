@@ -1,6 +1,12 @@
 <% current_user.reviews.each do |review| %>
-  <div>
+  <div class="user-page-review-card bg-white">
     <%= review.content %>
     <%= review.stars %>
   </div>
 <% end %>
+
+<style type="text/css">
+  .user-page-review-card {
+    border-radius: 5px;
+  }
+</style>
