@@ -1,0 +1,30 @@
+textarea#content-review {
+	width: 720px;
+	height: 288px;
+	border: 2px solid #e8e8e8;
+	background-color: #f8f8f8;
+	outline: none;
+	resize: none;
+}
+
+.form-fields {
+	display: flex;
+}
+
+.form-fields .select-fields {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+	width: 325px;
+}
+
+.form-fields .select-fields input {
+	width: 100%;
+	margin-left: 16px;
+	height: 60px;
+	border: 2px solid #e8e8e8;
+	background-color: #f8f8f8;
+	outline: none;
+	text-align: center;
+}

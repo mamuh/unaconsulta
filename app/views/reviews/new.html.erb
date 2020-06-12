@@ -1,11 +1,29 @@
+<!-- My code -->
 <h2>Reviewing property in <%= @property.address %></h2>
-<%= simple_form_for [@property, @review] do |f| %>
+<!-- <form class="form-section" action="" method="get">
+  <div class="form-fields">
+    <textarea name="content" id="content-review" cols="30" rows="10"></textarea>
+    <div class="select-fields">
+      <input type="date" name="checkin" id="checkin">
+      <input type="date" name="checkout" id="checkout">
+      <input type="number" name="stars" placeholder="Rating" id="stars">
+      <input type="submit" name="Submit" id="submit">
+    </div>
+  </div>
+</form> -->
+<!-- My code ends here -->
+
+<%= simple_form_for [@property, @review], class: 'form-section' do |f| %>
 <%# Start of inputs %>
-  <%= f.input :content %>
-  <%= f.input :stars, input_html: { type: 'number', min: '1', max: '5', step: '1' } %>
-  <%= f.input :checkin %>
-  <%= f.input :checkout %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
+<div class="d-flex">
+  <%= f.input :content, input_html: { id: 'content-review' } %>
+  <div class="select-fields">
+    <%= f.input :checkin %>
+    <%= f.input :checkout %>
+    <%= f.input :stars, input_html: { min: '1', max: '5', step: '1', id: 'stars' }, placeholder: 'Rating' %>
+    <%= f.submit %>
+  </div>
+</div>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%# End of inputs %>
 <% end %>
