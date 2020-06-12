@@ -1,0 +1,44 @@
+.card-review {
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    position: relative;
+    border-radius: 5px;
+    .btn {
+        background-color: #4717B0;
+        color: white;
+    }
+    .card-infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .links {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 500;
+    }
+}
+
+.search-form {
+    margin-right: 4px;
+    .btn {
+        color: white;
+        background-color: #4717B0;
+    }
+}
+
+
+#map {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cards-container {
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+.search-form {
+  margin-right: 4px;
+  width: 78%;
+  margin: 0 auto;
+}
