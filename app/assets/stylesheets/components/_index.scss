@@ -10,3 +10,26 @@
 @import "buttons";
 @import "map";
 @import "card-review";
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+/* General website CSS Reset */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	background-color: #f0f0f5;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+li {
+	list-style: none !important;
+}
+
