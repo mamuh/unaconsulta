@@ -1,4 +1,35 @@
-// Specific CSS for your home-page
-* {
-  font-family: 'Montserrat', sans-serif;
+header {
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+		url("https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1346&q=80");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 389px;
+	padding-top: 3%;
+}
+
+header .header-content {
+	display: flex;
+	justify-content: center;
+	padding-top: 79px;
+	align-items: center;
+	flex-direction: column;
+}
+
+header .header-content p {
+	padding: 10px 0 30px 0;
+	font-family: Roboto;
+	color: #fff;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: 500;
+	max-width: 600px;
+	text-align: center;
+}
+
+header .header-content h1 {
+	font-size: 2rem;
+	font-weight: bolder;
+	font-family: "Poppins";
+	color: #fff;
 }
