@@ -43,3 +43,16 @@
 	border-radius: 3px;
 	border: 0;
 }
+
+.btn-find {
+  background-color: var(--button-color-signup);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  color: var(--text-color);
+  font-family: var(--button-text-style);
+  font-weight: bold;
+  border-radius: 3px;
+  border: 0;
+}
