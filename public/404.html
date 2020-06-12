@@ -4,6 +4,7 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
   <style>
   .rails-default-error-page {
     /*background-image: url("building-door-entrance-exit-277559.jpg");*/
@@ -15,77 +16,51 @@
     width: auto;
     height: 100vh;
     overflow: hidden;
+    margin: 100px 0px 0px 0px;
   }
-/*  a {
-    display: block;
-    width: 160px;
-    height: 40px;
-    line-height: 40px;
-    padding: 10px 5px;
-    margin: 20px;
-    background-color: #000;
-    color: #FFF;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-}*/
-/*  .rails-default-error-page div.dialog {*/
-/*    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;*/
- /* }*/
+    .btn-home {
+      background-color: #393e46;
+      color: white;
+      border-radius: 5px;
+      padding: 9px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      opacity: 0.9;
+      margin: 0px 18px;
+    }
 
-/*  .rails-default-error-page div.dialog > div {*/
-  /*  border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);*/
- /* }*/
+    .btn-back {
+      background-color: #393e46;
+      color: white;
+      border-radius: 5px;
+      padding: 9px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+    .btn-home:hover {
+      background-color: #4cd3c2;
+    }
 
-  /*.rails-default-error-page h1 {*/
-/*    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;*/
-/*  }*/
-
-/*  .rails-default-error-page div.dialog > p {*/
-    /*margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);*/
-
- /* }*/
+    .btn-back:hover {
+      background-color: #4cd3c2;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
+  <i class="fas fa-house-damage" id="house"></i>
   <div class="dialog">
     <div>
       <h1>Look like you're lost</h1>
-      <p>The page you are looking for not avaliable!.</p>
-      <div class="d-flex button">
-        <a href="/">HOME</a>
-        <form>
+      <h2>The page you are looking for not avaliable!</h2>
+      <div class="d-flex">
+        <a href="/" class="btn-home">Take me home</a>
+   <!--      <form>
           <input type="button" value="BACK!" onclick="history.go(-1) back-">
-        </form>
-        </div>
+        </form> -->
+      </div>
 
     </div>
   </div>
