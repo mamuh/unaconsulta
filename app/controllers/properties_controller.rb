@@ -80,7 +80,7 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.user = current_user
-    if @property.save
+    if @property.save!
       redirect_to new_property_review_path(@property)
     else
       raise

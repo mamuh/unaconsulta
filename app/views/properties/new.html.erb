@@ -1,23 +1,18 @@
-<%= simple_form_for @property, html: { id: "form-map" } do |f| %>
-  <%= f.input :address, input_html: { class: "user_input", value: @query } %>
-  <%= f.button :submit, "Confirm property and review", class: "btn btn-primary" %>
-<% end %>
+<div class="pt-5">
+  <%= simple_form_for @property, html: { id: "form-map" } do |f| %>
+    <%= f.input :address, input_html: { class: "user_input", value: @query } %>
+    <%= f.button :submit, "Confirm address and review", class: "btn btn-success" %>
+  <% end %>
 
-<div class="text-center">
-  <div id="map"
-       style="width: 100%; height: 350px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="mt-3" style="margin: 0 auto; width: 100%;">
+    <div id="map"
+         style="width: 100%; height: 60vh;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
 
-
-
-  <div>
-    <%= link_to @properties.last.address, property_path(@properties.last) %> |
-    <%= @properties.last.latitude %> |
-    <%= @properties.last.longitude %>
-  </div>
 
 
 

@@ -14,23 +14,22 @@
 
 <body>
   <% if action_name == 'home' %>
-  <%= render 'shared/navbar_home' %>
+    <%= render 'shared/navbar_home' %>
   <% else %>
-  <!-- <%= render 'shared/navbar' %> -->
+    <%= render 'shared/navbar' %>
   <% end %>
   <%= render 'shared/flashes' %>
 
   <% unless @home_page %>
-  <div class="container">
-    <% end %>
+    <div class="container mt-5 pt-3">
+  <% end %>
 
     <%= yield %>
 
-    <% unless @home_page %>
-  </div>
+  <% unless @home_page %>
+    </div>
   <% end %>
 
-  <%= render 'shared/footer' %>
 </body>
 
 </html>
