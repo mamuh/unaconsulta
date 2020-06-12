@@ -3,7 +3,6 @@ class Property < ApplicationRecord
   has_many :reviews
 
   validates :address, presence: true, uniqueness: true
-  validates :latitude, uniqueness: { scope: :longitude }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
