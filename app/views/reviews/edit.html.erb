@@ -1,9 +1,13 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <%= simple_form_for [@property, @review] do |f| %>
 <%# Start of inputs %>
 <%= f.input :content %>
 <%= f.input :stars, collection: (1..5).to_a, label: "Please, rate this property" %>
-<%= f.input :checkin %>
-<%= f.input :checkout %>
+<%= f.input :checkin, input_html: {id: "booking_start_date"}, as: :string, type: :text  %>
+<%= f.input :checkout, input_html: { id: "booking_end_date" }, as: :string, type: :text  %>
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.submit %>
 <%# End of inputs %>

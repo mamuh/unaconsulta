@@ -16,8 +16,10 @@ const initModal = () => {
   var span = document.getElementsByClassName("close")[0];
 
   // close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
+  if (span) {
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
   }
 
   window.addEventListener('keydown', (event) => {
