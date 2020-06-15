@@ -1,21 +1,21 @@
-  .small-photos {
-    height: 30vh;
-    overflow: scroll;
-  }
+.small-photos {
+  height: 30vh;
+  overflow: scroll;
+}
 
-  .fa-star {
-    color: #f2e63a;
-  }
+.fa-star {
+  color: #f2e63a;
+}
 
-  .review-content-container {
-    height: 70vh;
-    overflow: scroll;
-  }
+.review-content-container {
+  height: 70vh;
+  overflow: scroll;
+}
 
-  #small-pic:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
+#small-pic:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
 
   /* The Modal (background) */
 .modal {
@@ -73,10 +73,10 @@
 /* The Close Button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 90px;
+  right: 400px;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
 }

@@ -15,7 +15,7 @@
         <% @property.reviews.each do |review| %>
           <% review.photos.each do |photo| %>
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2", id: "small-pic" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic" %>
           <% end %>
         <% end %>
       </div>
@@ -39,7 +39,7 @@
         <% if review.photos.attached? %>
           <div class="thumb-photos py-2">
             <% review.photos.each do |photo| %>
-              <%= cl_image_tag(photo.key, crop: :fit, width: 100) %>
+              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "small-pic") %>
             <% end %>
           </div>
         <% end %>
@@ -57,13 +57,12 @@
 </div>
 
 <div class="my-3">
-  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-purple py-3 px-4 font-weight-bold" %>
 </div>
 
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
+  <img class="modal-content img-fluid" id="img01">
 </div>
 
 
@@ -78,26 +77,3 @@
   }
 </style>
 
-
-<!-- <script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("small-pic");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script> -->
