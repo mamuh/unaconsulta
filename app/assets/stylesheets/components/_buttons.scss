@@ -44,17 +44,20 @@
 	border: 0;
 }
 
+// Button Style
 .btn-find {
-  background-color: var(--button-color-signup);
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  margin-left: 10px;
-  color: var(--text-color);
-  font-family: var(--button-text-style);
-  font-weight: bold;
-  border-radius: 3px;
-  border: 0;
+	width: 210px;
+	font-family: "Poppins";
+	background-color: var(--button-color-signup);
+	outline: none;
+	border: none;
+	padding: 7px 20px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-family: var(--button-text-style);
+	font-weight: bold;
+	border-radius: 3px;
+	border: 0;
 }
 
 .btn-purple {
