@@ -57,22 +57,12 @@
 </div>
 
 <div class="my-3">
-  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary px-3 py-2" %>
 </div>
 
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
-</div>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <img src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80">
-    </div>
-  </div>
 </div>
 
 
@@ -87,27 +77,3 @@
   }
 </style>
 
-
-<script>
-
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var imgs = document.querySelectorAll(".small-pic");
-var modalImg = document.getElementById("img01");
-
-imgs.forEach(img => {
-  img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-  }
-})
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
