@@ -1,11 +1,12 @@
+<div class="py-5">
 
   <% if @properties.size == 0 %>
     <h2>No properties matched your search for "<%= @query %>"</h2>
-    <h2><%= link_to "Be the first to review it", {action: "new",  query: params[:query] }  %></h2>
+    <h2><%= link_to "Be the first to review it >>", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-primary"  %></h2>
   <% else %>
-   <h2>Showing <%= @properties.size %> result(s) for your search</h2>
+   <h2>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h2>
   <% end %>
-  
+
   <div class="search-form form-group form-inline d-flex">
     <div class="search-form">
       <%= form_tag properties_find_path, method: :get do %>
@@ -20,42 +21,59 @@
     <% end %>
   </div>
 
-  <div class="d-flex justify-content-between">
-    <div class="d-block cards-container mr-2">
-      <% @properties.each do |prop| %>
-      <div class="card-review d-flex mb-5 mr-5">
-        <% if prop.reviews&.last.photos&.attached? %>
-          <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 200) %>
-        <% else %>
-          <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
-        <% end %>
+  <div class="d-flex justify-content-between mt-3">
+    <% if @properties.size > 0 %>
 
-        <div class="card-content p-3">
-          <div class="card-infos">
-            <strong><%= prop.address %></strong>
-            <small>Last review at <%= prop.reviews.last.created_at.strftime("%d-%m-%Y") %></small>
-          </div>
-          
-          <div class="btn-group links" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-angle-right"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
-              <% if prop.reviews.size > 0 %>
-                <%= link_to "See previous reviews", property_path(prop), class: "dropdown-item" %>
+      <div class="d-block cards-container mr-2">
+        <% @properties.each do |prop| %>
+        <div class="card-review d-flex mb-5 mr-5 bg-white">
+          <% if prop&.reviews&.last&.photos&.attached? %>
+            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 170) %>
+          <% else %>
+            <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
+          <% end %>
+
+          <div class="card-content p-3">
+            <div class="card-infos">
+              <strong><%= prop.address %></strong>
+              <% if prop.reviews.count > 0 %>
+                <small>Last reviewed on <%= prop&.reviews&.last&.created_at&.strftime("%d-%m-%Y") %></small>
+              <% else %>
+                <small>No reviews for this property</small>
               <% end %>
+            </div>
+
+            <div class="btn-group links" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-angle-right"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
+                <% if prop.reviews.count > 0 %>
+                  <%= link_to "See all reviews", property_path(prop), class: "dropdown-item" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
+
+    <% end %>
 
     <div id="map"
-        style="width: 80%; height: 500px;"
+        style="width: 100%; height: 70vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
+<!--
+<style type="text/css">
+
+  @media (max-width: 992px) {
+  #map {
+    width: 100%
+  }
+</style> -->
 

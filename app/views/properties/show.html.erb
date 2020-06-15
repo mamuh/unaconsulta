@@ -15,7 +15,7 @@
         <% @property.reviews.each do |review| %>
           <% review.photos.each do |photo| %>
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic" %>
           <% end %>
         <% end %>
       </div>
@@ -39,7 +39,7 @@
         <% if review.photos.attached? %>
           <div class="thumb-photos py-2">
             <% review.photos.each do |photo| %>
-              <%= cl_image_tag(photo.key, crop: :fit, width: 100) %>
+              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "small-pic") %>
             <% end %>
           </div>
         <% end %>
@@ -57,33 +57,23 @@
 </div>
 
 <div class="my-3">
-  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary p-2" %>
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-purple py-3 px-4 font-weight-bold" %>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content img-fluid" id="img01">
 </div>
 
 
-
 <style type="text/css">
-  .main-photo {
+    .main-photo {
     height: 40vh;
-    background-image: url(<% if @property.reviews.last.photos.attached? %>
-      <%= cl_image_path @property.reviews.last.photos.first.key, crop: :fit, width: 700; %>
+    background-image: url(<% if @property&.reviews&.first&.photos&.attached? %>
+      <%= cl_image_path @property&.reviews&.first&.photos&.first.key, crop: :fit, width: 700; %>
       <% else %>
-      "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80"
+      "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80"
       <% end %>);
   }
-
-  .small-photos {
-    height: 30vh;
-    overflow: scroll;
-  }
-
-  .fa-star {
-    color: #f2e63a;
-  }
-
-  .review-content-container {
-    height: 70vh;
-    overflow: scroll;
-  }
-
 </style>
+

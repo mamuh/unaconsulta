@@ -1,0 +1,20 @@
+<% current_user.reviews.each do |review| %>
+  <div class="user-page-review-card bg-white m-3 p-3">
+    <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
+    <p><%= review.content %></p>
+    <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+    <p>Property in
+      <%= link_to property_path(review.property) do %>
+      <%= review.property.address %>
+      <% end %>
+    </p>
+  </div>
+<% end %>
+
+<style type="text/css">
+  .user-page-review-card {
+    border-radius: 5px;
+  }
+</style>
+
+

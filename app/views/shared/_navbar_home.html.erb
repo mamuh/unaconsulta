@@ -1,36 +1,43 @@
-<div class="navbar navbar-expand-sm transparent navbar-lewagon-home">
-  <%= link_to "/", class: "navbar-brand-home" do %>
-  <%= image_tag "logo-una-consulta.svg" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<!-- Navbar Section -->
+<nav>
+  <div class="nav-container">
+    <%= link_to "/", class: "navbar-brand-home" do %>
+    <%= image_tag "logo-una-consulta.svg" %>
+    <% end %>
+    <ul>
       <% if user_signed_in? %>
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li>
+
+      <!-- Avatar -->
+
       <li class="nav-item dropdown">
-        <!-- <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> -->
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
+        <% if current_user.photo.attached? %>
+          <img class="avatar avatar-xs dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="/user_reviews">My Reviews</a>
+            <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
+          </div>
+        <% else %>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="/user_reviews">My Reviews</a>
+            <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
+          </div>
+        <% end %>
+
       </li>
       <% else %>
-      <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
+      <%= link_to "Log In", new_user_session_path, class: "btn-sign-in" %>
+      <%= link_to "Sign Up", new_user_registration_path , class: "btn-sign-up" %>
+      <!-- <li><a href="#" class="btn-sign-in">Sign In</a></li>
+        <li><a href="#" class="btn-sign-up">Sign Up</a></li> -->
       <% end %>
     </ul>
   </div>
-</div>
+</nav>
+

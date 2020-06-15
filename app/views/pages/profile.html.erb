@@ -1,5 +1,5 @@
-<div class='d-flex'>
-  <div class="card cards" style="width: 18rem;">
+<div class='d-flex mt-3'>
+  <div class="bg-white text-center p-4">
     <!-- <img src="" class="card-img-top" alt="..."> -->
       <div class="photo">
         <% if current_user.photo.attached? %>
@@ -17,17 +17,19 @@
       </div>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">All reviews</a>
+      <%= link_to "All reviews", user_reviews_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
-  <div class="profile">
-    <h1>Oi, Eu sou <%= current_user.name  %></h1>
-    <h2>My reviews</h2>
 
-    <div class="card">
-      <div class="card-body">
-        Isto é um texto dentro de um card.
-      </div>
-    </div>
+  <div class="profile">
+    <h2>My previous reviews</h2>
+
+      <% current_user.reviews.each do |review| %>
+        <div class="card m-2">
+          <div class="card-body">
+            <%= review.content %>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
