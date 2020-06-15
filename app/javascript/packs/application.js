@@ -31,11 +31,11 @@ import { initModal } from '../plugins/init_modal';
 import { initStarRating } from '../plugins/init_star_rating';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+initStarRating();
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initSearchForm();
   initModal();
-  initStarRating();
 });
