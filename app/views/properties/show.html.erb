@@ -32,7 +32,11 @@
 
       <div class="card-review bg-white p-3 rounded mb-3 shadow">
         <div class="d-flex justify-content-between">
-          <strong>Reviewed by <%= review.user.name.capitalize %></strong>
+          <% if review.user.name %>
+            <strong>Reviewed by <%= review.user.name %></strong>
+          <% else %>
+            <strong>Reviewed by <%= review.user.first_name %></strong>
+          <% end %>
           <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
         </div>
         <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
