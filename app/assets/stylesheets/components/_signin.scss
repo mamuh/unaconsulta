@@ -9,6 +9,7 @@
 .login-container h2 {
 	text-align: center;
 	font-family: "Poppins";
+	font-weight: 700;
 }
 
 .login-container {
@@ -26,6 +27,30 @@
 		border: 2px solid #ced4da;
 		border-radius: 2px;
 		transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+}
+
+.login-container {
+	fieldset.user_remember_me {
+		margin: 10px 0;
+	}
+
+	.form-actions {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.login-container {
+	.form-actions {
+		input.btn {
+			width: 100%;
+			padding: 10px;
+			background-color: #4717b0;
+			margin-bottom: 15px;
+			font-weight: bold;
+			color: #fff;
+		}
 	}
 }
 
