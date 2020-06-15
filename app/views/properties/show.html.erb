@@ -15,7 +15,7 @@
         <% @property.reviews.each do |review| %>
           <% review.photos.each do |photo| %>
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic", id: "small-pic" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic" %>
           <% end %>
         <% end %>
       </div>
@@ -39,7 +39,7 @@
         <% if review.photos.attached? %>
           <div class="thumb-photos py-2">
             <% review.photos.each do |photo| %>
-              <%= cl_image_tag(photo.key, crop: :fit, width: 100) %>
+              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "small-pic") %>
             <% end %>
           </div>
         <% end %>
@@ -57,12 +57,12 @@
 </div>
 
 <div class="my-3">
-  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-primary px-3 py-2" %>
+  <%= link_to "Leave a review for this property", new_property_review_path(@property), class: "btn btn-purple py-3 px-4 font-weight-bold" %>
 </div>
 
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
+  <img class="modal-content img-fluid" id="img01">
 </div>
 
 
