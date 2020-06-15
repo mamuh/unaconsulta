@@ -7,7 +7,7 @@
 <%= simple_form_for [@property, @review] do |f| %>
 <%# Start of inputs %>
   <%= f.input :content %>
-  <%= f.input :stars, collection: (1..5).to_a, input_html: { id: "star-rating-field" } %>
+  <%= f.input :stars, collection: (1..5).to_a, label: "Please, rate this property" %>
   <%= f.input :checkin %>
   <%= f.input :checkout %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
