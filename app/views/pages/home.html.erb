@@ -3,17 +3,17 @@
     <h1>Find a property to see or leave reviews</h1>
     <div class="search-form">
 
-      <div class="form-group form-inline d-flex justify-content-center align-items-center">
-        <%= form_tag nil, id: "main-form", method: :get do %>
-        <%= text_field_tag :query,
+        <div class="form-group form-inline d-flex justify-content-center align-items-center">
+          <%= form_tag nil, id: "main-form", method: :get do %>
+          <%= text_field_tag :query,
               params[:query],
               class: "form-control user_input",
-              placeholder: "Please, type a property address",
+              placeholder: "Type a property address",
               required: true
             %>
-        <button id="find" class="btn-find">Find property</button>
-        <% end %>
-      </div>
+          <button id="find" class="btn-find mt-3">Find property</button>
+          <% end %>
+        </div>
 
     </div>
   </div>
@@ -21,44 +21,44 @@
 </header>
 
 
-<!-- Card category section -->
-<div class="card-container">
-  <div class="cards-home overlay">
-    <!-- Card 1 -->
-    <div class="card-trip">
-      <img
-        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-info">
-        <h2>Reviewed by Lucy Adams</h2>
-        <div class="card-details">
-          <p>See the details</p>
-          <%= image_tag asset_path('seta-direita.svg') %>
-        </div>
-      </div>
+<div class="container">
+  <div class="d-flex justify-content-around mt-4">
+
+    <div class="home-page-card">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <p>Reviewed by Jane Doe</p>
     </div>
-    <!-- Card 2 -->
-    <div class="card-trip">
-      <img
-        src="https://images.unsplash.com/photo-1534595038511-9f219fe0c979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-info">
-        <h2>Reviewed by Lucy Adams</h2>
-        <div class="card-details">
-          <p>See the details</p>
-          <%= image_tag asset_path('seta-direita.svg') %>
-        </div>
-      </div>
+
+    <div class="home-page-card">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <p>Reviewed by John Doe</p>
     </div>
-    <!-- Card 3 -->
-    <div class="card-trip">
-      <img
-        src="https://images.unsplash.com/photo-1499955085172-a104c9463ece?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-info">
-        <h2>Reviewed by Lucy Adams</h2>
-        <div class="card-details">
-          <p>See the details</p>
-          <%= image_tag asset_path('seta-direita.svg') %>
-        </div>
-      </div>
+
+    <div class="home-page-card">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <p>Reviewed by myself</p>
     </div>
+
   </div>
 </div>
+
+
+<style type="text/css">
+  .home-page-card {
+    width: 350px;
+    height: 280px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2)
+  }
+
+  .home-page-card img {
+    width: 100%;
+    height: 80%;
+  }
+
+  .home-page-card p {
+    padding: 6px;
+    font-weight: bold;
+  }
+</style>

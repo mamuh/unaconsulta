@@ -20,7 +20,7 @@
   <div class="select-fields">
     <%= f.input :checkin %>
     <%= f.input :checkout %>
-    <%= f.input :stars, collection: (1..5).to_a, label: "Please, rate this property" %>
+    <%= f.input :stars, input_html: { min: '1', max: '5', step: '1', id: 'stars' }, placeholder: 'Rating' %>
     <%= f.submit %>
   </div>
 </div>
