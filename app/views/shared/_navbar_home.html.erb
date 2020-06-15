@@ -11,33 +11,31 @@
 
       <li class="nav-item dropdown">
         <% if current_user.photo.attached? %>
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-            <a class="dropdown-item" href="/user_reviews">My Reviews</a>
-            <a class="dropdown-item" href="/profile">Profile</a>
-            <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
-          </div>
+          <a class="dropdown-item" href="/user_reviews">My Reviews</a>
+          <a class="dropdown-item" href="/profile">Profile</a>
+          <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
+        </div>
         <% else %>
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4" />
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-            <a class="dropdown-item" href="/user_reviews">My Reviews</a>
-            <a class="dropdown-item" href="/profile">Profile</a>
-            <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
-          </div>
+          <a class="dropdown-item" href="/user_reviews">My Reviews</a>
+          <a class="dropdown-item" href="/profile">Profile</a>
+          <a class="dropdown-item" href="/users/sign_out" data-method="delete">Log Out</a>
+        </div>
         <% end %>
 
       </li>
       <% else %>
       <%= link_to "Log In", new_user_session_path, class: "btn-sign-in" %>
       <%= link_to "Sign Up", new_user_registration_path , class: "btn-sign-up" %>
-      <!-- <li><a href="#" class="btn-sign-in">Sign In</a></li>
-        <li><a href="#" class="btn-sign-up">Sign Up</a></li> -->
-      <% end %>
+
     </ul>
+    <% end %>
   </div>
 </nav>
-

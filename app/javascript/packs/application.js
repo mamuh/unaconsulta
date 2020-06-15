@@ -39,3 +39,8 @@ document.addEventListener('turbolinks:load', () => {
   // const form = document.getElementById('form-map');
   // form.addEventListener('keyup', code);
 });
+
+// Import star rating system
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
