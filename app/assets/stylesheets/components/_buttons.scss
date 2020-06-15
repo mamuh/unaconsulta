@@ -45,24 +45,36 @@
 }
 
 .btn-find {
-  background-color: var(--button-color-signup);
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  margin-left: 10px;
-  color: var(--text-color);
-  font-family: var(--button-text-style);
-  font-weight: bold;
-  border-radius: 3px;
-  border: 0;
+	background-color: var(--button-color-signup);
+	outline: none;
+	border: none;
+	padding: 10px 20px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-family: var(--button-text-style);
+	font-weight: bold;
+	border-radius: 3px;
+	border: 0;
 }
 
 .btn-purple {
-  background-color: #4717B0 !important;
-  color: white;
+	background-color: #4717b0 !important;
+	color: white;
 }
 
 .btn-purple:hover {
-  background-color: #210560 !important;
-  color: white;
+	background-color: #210560 !important;
+	color: white;
+}
+
+// Log In page button style
+.btn-facebook {
+	background: #3b5998;
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.btn-facebook:hover {
+	color: #fff;
 }

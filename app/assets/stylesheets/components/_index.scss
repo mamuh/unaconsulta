@@ -10,6 +10,8 @@
 @import "buttons";
 @import "map";
 @import "card-review";
+@import "signin";
+@import "signup";
 
 /* Google Fonts - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
@@ -23,7 +25,7 @@
 body,
 html {
 	background-color: #f0f0f5;
-  font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -33,4 +35,3 @@ a {
 li {
 	list-style: none !important;
 }
-
