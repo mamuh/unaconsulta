@@ -4,6 +4,8 @@
       <div class="photo">
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, crop: :fill, width: 200, height: 200, class: "avatar-lg" %>
+        <% elsif current_user.facebook_picture_url %>
+          <%= cl_image_tag current_user.facebook_picture_url, crop: :fill, width: 200, height: 200, class: "avatar-lg" %>
         <% else %>
           <img src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4"
             class="avatar-lg" alt="" width="200">
