@@ -27,6 +27,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initSearchForm } from "../plugins/init_search_form";
+import { initModal } from '../plugins/init_modal';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initSearchForm();
+  initModal();
   // const form = document.getElementById('form-map');
   // form.addEventListener('keyup', code);
 });

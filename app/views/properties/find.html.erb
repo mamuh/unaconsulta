@@ -2,9 +2,9 @@
 
   <% if @properties.size == 0 %>
     <h2>No properties matched your search for "<%= @query %>"</h2>
-    <h2><%= link_to "Be the first to review it >>", {action: "new",  query: params[:query] }, class: "btn btn-primary"  %></h2>
+    <h2><%= link_to "Be the first to review it >>", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-primary"  %></h2>
   <% else %>
-   <h2>Showing <%= @properties.size %> result(s) for your search</h2>
+   <h2>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h2>
   <% end %>
 
   <div class="search-form form-group form-inline d-flex">
@@ -28,7 +28,7 @@
         <% @properties.each do |prop| %>
         <div class="card-review d-flex mb-5 mr-5 bg-white">
           <% if prop&.reviews&.last&.photos&.attached? %>
-            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 200) %>
+            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 170) %>
           <% else %>
             <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
           <% end %>
@@ -36,7 +36,11 @@
           <div class="card-content p-3">
             <div class="card-infos">
               <strong><%= prop.address %></strong>
-              <small>Last review at <%= prop&.reviews&.last&.created_at&.strftime("%d-%m-%Y") %></small>
+              <% if prop.reviews.count > 0 %>
+                <small>Last reviewed on <%= prop&.reviews&.last&.created_at&.strftime("%d-%m-%Y") %></small>
+              <% else %>
+                <small>No reviews for this property</small>
+              <% end %>
             </div>
 
             <div class="btn-group links" role="group">
@@ -45,8 +49,8 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
-                <% if prop.reviews.size > 0 %>
-                  <%= link_to "See previous reviews", property_path(prop), class: "dropdown-item" %>
+                <% if prop.reviews.count > 0 %>
+                  <%= link_to "See all reviews", property_path(prop), class: "dropdown-item" %>
                 <% end %>
               </div>
             </div>

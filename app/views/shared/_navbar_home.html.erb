@@ -11,9 +11,10 @@
 
       <li class="nav-item dropdown">
         <% if current_user.photo.attached? %>
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+          <img class="avatar avatar-xs dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
           <a class="dropdown-item" href="/user_reviews">My Reviews</a>
           <a class="dropdown-item" href="/profile">Profile</a>
