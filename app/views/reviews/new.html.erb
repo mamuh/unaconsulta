@@ -18,8 +18,8 @@
 <div class="d-flex">
   <%= f.input :content, input_html: { id: 'content-review' } %>
   <div class="select-fields">
-    <%= f.input :checkin %>
-    <%= f.input :checkout %>
+    <%= f.input :checkin, input_html: {id: "booking_start_date"}, as: :string, type: :text  %>
+    <%= f.input :checkout, input_html: { id: "booking_end_date" }, as: :string, type: :text  %>
     <%= f.input :stars, collection: (1..5).to_a, label: "Please, rate this property" %>
     <%= f.submit %>
   </div>
