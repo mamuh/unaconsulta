@@ -57,6 +57,20 @@
   border: 0;
 }
 
+.btn-find-2 {
+	background-color: #33837E;
+	outline: none;
+	border: none;
+	padding: 5px 10px;
+	margin-left: 10px;
+	color: white;
+	font-family: var(--button-text-style);
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 3px;
+	border: 0;
+  }
+
 .btn-purple {
   background-color: #4717B0 !important;
   color: white;
@@ -65,4 +79,9 @@
 .btn-purple:hover {
   background-color: #210560 !important;
   color: white;
+}
+
+.btn-review {
+    opacity: 0.8;
+    font-weight: bold;
 }

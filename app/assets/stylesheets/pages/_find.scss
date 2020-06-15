@@ -1,0 +1,41 @@
+.find-review {
+    .search-form {
+        bottom: -67px;
+        background-color: white;
+        box-shadow: 0px 2px 6px grey;
+        width: 100%;
+        .form-inline {
+        margin: 0;
+        padding: 37px 0px;
+        input {
+            background-color: #e2e2e2;
+          }
+        }
+        #review-form {
+            display: flex;
+            align-items: center;
+            .algolia-places {
+              width: 596px;
+              input {
+                background-color: #e2e2e2;
+                color: grey;
+              }
+              .ap-input-icon svg {
+                fill: grey;
+              }
+            }
+            .btn-find-2 {
+              background-color: var(--button-color-signup);
+              outline: none;
+              border: none;
+              padding: 7px 20px;
+              margin-left: 10px;
+              color: var(--text-color);
+              font-family: var(--button-text-style);
+              font-weight: bold;
+              border-radius: 3px;
+              border: 0;
+            }
+          }
+    }
+}

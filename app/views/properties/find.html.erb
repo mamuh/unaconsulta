@@ -1,25 +1,29 @@
-<div class="py-5">
+<div class="py-5 find-review">
+
+  <div class="search-form">
+    <div class="form-group form-inline d-flex justify-content-center align-items-center mb-3">
+        <%= form_tag properties_find_path, id: "review-form", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control user_input",
+          onchange: "this.form.submit();",
+          placeholder: "Find a property"
+        %>
+      <button class="btn-find-2">
+        <i class="fas fa-location-arrow"></i>
+      </button>
+      <% end %>
+    </div>
+  </div>
 
   <% if @properties.size == 0 %>
-    <h2>No properties matched your search for "<%= @query %>"</h2>
-    <h2><%= link_to "Be the first to review it >>", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-primary"  %></h2>
-  <% else %>
-   <h2>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h2>
-  <% end %>
-
-  <div class="search-form form-group form-inline d-flex">
-    <div class="search-form">
-      <%= form_tag properties_find_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "user_input",
-        onchange: "this.form.submit();",
-        placeholder: "Find a property"
-      %>
+    <div class="d-flex align-items-center justify-content-center">
+      <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
+      <h2><%= link_to "Be the first to review it", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-primary btn-review ml-2"  %></h2>
     </div>
-      <%= submit_tag "Search", remote: false, class: "btn btn-outline" %>
-    <% end %>
-  </div>
+  <% else %>
+   <h5>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h5>
+  <% end %>
 
   <div class="d-flex justify-content-between mt-3">
     <% if @properties.size > 0 %>
