@@ -32,6 +32,7 @@ header .header-content h1 {
 	font-weight: bolder;
 	font-family: "Poppins";
 	color: #fff;
+  text-align: left !important;
 }
 
 header {
@@ -74,4 +75,9 @@ header {
       }
     }
   }
+}
+.btn-esq {
+  color: yellow;
+  background-color: blue;
+  position: absolute;
 }
