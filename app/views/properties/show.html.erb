@@ -11,14 +11,13 @@
       <div class="property-photos main-photo bg-dark mb-2 rounded">
       </div>
 
-      <div class="property-photos small-photos d-flex justify-content-between flex-wrap align-items-center mb-3">
-        <% @property.reviews.each do |review| %>
-          <% review.photos.each do |photo| %>
-
+        <div class="property-photos small-photos d-flex justify-content-between flex-wrap align-items-center mb-3">
+          <% @property.reviews.each do |review| %>
+            <% review.photos.each do |photo| %>
               <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic" %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
 
     </div>
 
