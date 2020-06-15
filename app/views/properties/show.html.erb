@@ -15,7 +15,7 @@
         <% @property.reviews.each do |review| %>
           <% review.photos.each do |photo| %>
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2", id: "small-pic" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic", id: "small-pic" %>
           <% end %>
         <% end %>
       </div>
@@ -63,7 +63,16 @@
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
-  <div id="caption"></div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <img src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80">
+    </div>
+  </div>
 </div>
 
 
@@ -79,19 +88,20 @@
 </style>
 
 
-<!-- <script>
-// Get the modal
+<script>
+
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("small-pic");
+var imgs = document.querySelectorAll(".small-pic");
 var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+
+imgs.forEach(img => {
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+})
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -100,4 +110,4 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
-</script> -->
+</script>
