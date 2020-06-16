@@ -1,3 +1,4 @@
+
 header {
 	background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
 	url("https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1346&q=80");
@@ -99,11 +100,9 @@ header {
   margin: auto;
   margin-top: 120px;
   margin-bottom: 40px;
-  height: 370px;
   .text-reviews {
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 20px 50px 20px 0px;
     flex: 0 0 60%;
     #local {
@@ -116,6 +115,7 @@ header {
       font-weight: 900;
       font-size: 40px;
       margin-bottom: 26px;
+      margin-top: 20px;
     }
     p {
       font-family: 'Poppins', sans-serif;
@@ -129,6 +129,7 @@ header {
       padding: 8px 5px;
       text-align: center;
       font-weight: bold;
+      margin-top: 10px;
     }
   }
   .imagens-card-home {
@@ -137,13 +138,14 @@ header {
     flex: 0 0 40%;
     justify-content: space-between;
     img.imagem-maior {
-      width: 433px;
+      width: 100%;
     }
     .imagens-menores {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 10px;
       img {
-        width: 210px;
+        width: 49%;
       }
     }
   }

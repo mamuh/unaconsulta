@@ -2,7 +2,11 @@
 
 <% current_user.reviews.each do |review| %>
 <div class="user-review-card mb-4">
-  <%= cl_image_tag(review.photos.sample.key, crop: :fill, width: 150, class: "small-pic") %>
+  <% if review.photos.sample %>
+    <%= cl_image_tag(review.photos.sample.key, crop: :fill, width: 150, class: "small-pic") %>
+  <% else %>
+    <%= cl_image_tag "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80", crop: :fill, width: 150, class: "small-pic" %>
+  <% end %>
   <div class="user-page-review-infos bg-white ml-3">
     <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
     <p class="blockquote-footer"><%= review.content %></p>
@@ -13,5 +17,5 @@
       <% end %>
     </p>
   </div>
-</div> 
+</div>
 <% end %>

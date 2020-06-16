@@ -1,29 +1,20 @@
-<!-- My code -->
+
 <h2>Reviewing property in <%= @property.address %></h2>
-<!-- <form class="form-section" action="" method="get">
-  <div class="form-fields">
-    <textarea name="content" id="content-review" cols="30" rows="10"></textarea>
-    <div class="select-fields">
-      <input type="date" name="checkin" id="checkin">
-      <input type="date" name="checkout" id="checkout">
-      <input type="number" name="stars" placeholder="Rating" id="stars">
-      <input type="submit" name="Submit" id="submit">
-    </div>
-  </div>
-</form> -->
-<!-- My code ends here -->
+
 
 <%= simple_form_for [@property, @review], class: 'form-section' do |f| %>
-<%# Start of inputs %>
+
 <div class="d-flex">
   <%= f.input :content, input_html: { id: 'content-review' } %>
   <div class="select-fields">
     <%= f.input :checkin, input_html: {id: "booking_start_date"}, as: :string, type: :text  %>
     <%= f.input :checkout, input_html: { id: "booking_end_date" }, as: :string, type: :text  %>
     <%= f.input :stars, collection: (1..5).to_a, label: "Please, rate this property" %>
-    <%= f.submit %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Leave review", class: "btn btn-primary" %>
   </div>
 </div>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%# End of inputs %>
+
 <% end %>
+
+<%= link_to "<< Back to property", property_path(@property) %>
