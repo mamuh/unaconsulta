@@ -1,4 +1,8 @@
 // First we define two variables that are going to grab our inputs field. You can check the ids of the inputs with the Chrome inspector.
+// import 'flatpickr/dist/themes/dark.css';
+import flatpickr from "flatpickr";
+
+
 const initFlatpickr = () => {
   const startDateInput = document.getElementById('booking_start_date');
   const endDateInput = document.getElementById('booking_end_date');
@@ -13,7 +17,7 @@ const initFlatpickr = () => {
     }
     flatpickr(endDateInput, {
       minDate: e.target.value,
-      dateFormat: "d-m-Y"
+      dateFormat: "Y-m-d"
       });
     })
   };

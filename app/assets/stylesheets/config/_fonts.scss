@@ -1,55 +1,55 @@
 // Import Google fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
-@font-face {
-font-family: 'Aller';
-font-style: normal;
-font-weight: normal;
-src: local('Aller'), url('Aller_Rg.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Aller Italic';
-font-style: normal;
-font-weight: normal;
-src: local('Aller Italic'), url('Aller_It.woff') format('woff');
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
+// @font-face {
+// font-family: 'Aller';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller'), url('Aller_Rg.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Aller Bold';
-font-style: normal;
-font-weight: normal;
-src: local('Aller Bold'), url('Aller_Bd.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Aller Italic';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller Italic'), url('Aller_It.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Aller Bold Italic';
-font-style: normal;
-font-weight: normal;
-src: local('Aller Bold Italic'), url('Aller_BdIt.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Aller Bold';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller Bold'), url('Aller_Bd.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Aller Display';
-font-style: normal;
-font-weight: normal;
-src: local('Aller Display'), url('AllerDisplay.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Aller Bold Italic';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller Bold Italic'), url('Aller_BdIt.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Aller Light Italic';
-font-style: normal;
-font-weight: normal;
-src: local('Aller Light Italic'), url('Aller_LtIt.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Aller Display';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller Display'), url('AllerDisplay.woff') format('woff');
+// }
+
+
+// @font-face {
+// font-family: 'Aller Light Italic';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Aller Light Italic'), url('Aller_LtIt.woff') format('woff');
+// }
 // Define fonts for body and headers
-$body-font: "Aller Display";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "font-family: 'Poppins', sans-serif;";
+$headers-font: "font-family: 'Poppins', sans-serif;";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

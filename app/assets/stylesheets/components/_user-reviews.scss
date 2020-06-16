@@ -1,0 +1,28 @@
+.user-review-card {
+    height: 130px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .small-pic {
+      height: 100%;
+  }
+
+  h2 {
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .user-review-card p {
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .user-review-card .user-page-review-infos {
+    .link-user-review {
+        color: blueviolet;
+        font-weight: bold;
+    }
+  }

@@ -31,6 +31,12 @@
 	border: 0;
 }
 
+.btn-sign-in:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #200956;
+}
+
 .btn-sign-up {
 	background-color: var(--button-color-signup);
 	outline: none;
@@ -44,6 +50,12 @@
 	border: 0;
 }
 
+.btn-sign-up:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #185450;
+}
+
 .btn-find {
 	background-color: var(--button-color-signup);
 	outline: none;
@@ -55,6 +67,10 @@
 	font-weight: bold;
 	border-radius: 3px;
 	border: 0;
+}
+
+.btn-find:hover {
+  background-color: #185b57;
 }
 
 .btn-find-2 {
@@ -96,6 +112,16 @@
 }
 
 .btn-review {
-	opacity: 0.8;
-	font-weight: bold;
+  opacity: 0.8;
+  background-color: #4717b0;
+	color: white;
+	max-height: 50px;
+	max-width: 150px;
+	padding-bottom: 5px;
+	background-image: linear-gradient(-90deg, #5c2a9d, #45046a);
+}
+
+.btn-review:hover {
+    opacity: 1;
+    color: white;
 }
