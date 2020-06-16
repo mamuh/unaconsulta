@@ -114,7 +114,11 @@
 .btn-review {
     opacity: 0.8;
     background-color: #4717b0;
-    color: white;
+	color: white;
+	max-height: 50px;
+	max-width: 150px;
+	padding-bottom: 5px;
+	background-image: linear-gradient(-90deg, #5c2a9d, #45046a);
 }
 
 .btn-review:hover {
