@@ -1,5 +1,5 @@
 // First we define two variables that are going to grab our inputs field. You can check the ids of the inputs with the Chrome inspector.
-import 'flatpickr/dist/flatpickr.min.css';
+// import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from "flatpickr";
 
 
