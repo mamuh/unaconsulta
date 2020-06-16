@@ -5,15 +5,15 @@ header {
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 389px;
-	padding-top: 3%;
+	padding: 20px 50px 20px 0px;
 }
 
 header .header-content {
 	display: flex;
 	justify-content: center;
-	padding-top: 79px;
 	align-items: end;
 	flex-direction: column;
+  padding: 85px 72px 41px 55px;
 }
 
 header .header-content p {
@@ -47,6 +47,11 @@ header {
     .form-inline {
       margin: 0;
       padding: 37px 0px;
+    }
+     .text-search {
+      font-family: 'Poppins', sans-serif;
+      color: #514FB0;
+      font-weight: bold;
     }
     #main-form {
       display: flex;
@@ -110,6 +115,7 @@ header {
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
       font-size: 40px;
+      margin-bottom: 26px;
     }
     p {
       font-family: 'Poppins', sans-serif;
