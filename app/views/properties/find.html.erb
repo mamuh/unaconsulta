@@ -1,6 +1,6 @@
 <div class="py-5 find-review">
 
-  <div class="search-form bg-light">
+  <div class="search-form shadow p-3 mb-5 bg-white rounded">
     <div class="form-group form-inline d-flex justify-content-center align-items-center mb-3">
         <%= form_tag properties_find_path, id: "review-form", method: :get do %>
         <%= text_field_tag :query,
@@ -19,7 +19,7 @@
   <% if @properties.size == 0 %>
     <div class="d-flex align-items-center justify-content-center">
       <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
-      <h2><%= link_to "Be the first to review it", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-2" %></h2>
+      <h2><%= link_to "Review it!!", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-2"  %></h2>
     </div>
   <% else %>
    <h5>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h5>
