@@ -1,44 +1,47 @@
-header {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-    url("https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1346&q=80");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  text-align: center;
-  padding-top: 7%;
-}
+#carouselExampleControls {
+  height: 100%;
+  .carousel-inner {
+    height: 100%;
+    .carousel-item {
+      height: 100%;
+      .container-banner {
+        padding: 0;
+        width: 80%;
+        margin: auto;
+      }
+      .banner {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        position: relative;
 
-header .header-content {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 59px;
-  /* line-height: 25px; */
-}
+      }
+    }
+  }
+  .banner-buttons {
+    background-color: #514FB0;
+    position: absolute;
+    bottom: 45px;
+    right: 10%;
+    display: flex;
+    z-index: 1;
+    .btn-esq, .btn-rgt {
+      flex: 0 0 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+    .btn-rgt {
+      color: white;
 
-header h1 {
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 10px;
+    }
+    .btn-esq {
+      background-color: white;
+      color: black;
+    }
+  }
 }
-
-#header-input {
-  margin-bottom: 23px;
-  min-width: 400px;
-  height: 35px;
-  text-align: center;
-  padding: 15px;
-  font-family: "Montserrat";
-  color: #f0f0f5;
-  /* border-radius: 3px; */
-  border: none;
-}
-
-.form-inline .form-control {
-  width: 100%;
-}
-
-header h2 {
-  color: white;
-}
-
