@@ -113,5 +113,11 @@
 
 .btn-review {
     opacity: 0.8;
-    font-weight: bold;
+    background-color: #4717b0;
+    color: white;
+}
+
+.btn-review:hover {
+    opacity: 1;
+    color: white;
 }
