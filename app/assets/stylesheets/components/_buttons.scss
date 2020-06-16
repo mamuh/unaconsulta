@@ -31,6 +31,12 @@
 	border: 0;
 }
 
+.btn-sign-in:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #200956;
+}
+
 .btn-sign-up {
 	background-color: var(--button-color-signup);
 	outline: none;
@@ -44,6 +50,12 @@
 	border: 0;
 }
 
+.btn-sign-up:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #185450;
+}
+
 .btn-find {
 	background-color: var(--button-color-signup);
 	outline: none;
@@ -55,6 +67,10 @@
 	font-weight: bold;
 	border-radius: 3px;
 	border: 0;
+}
+
+.btn-find:hover {
+  background-color: #185b57;
 }
 
 .btn-find-2 {
