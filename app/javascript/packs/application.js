@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require('flatpickr/dist/flatpickr.min.css')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -29,6 +30,7 @@ import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initSearchForm } from "../plugins/init_search_form";
 import { initModal } from '../plugins/init_modal';
 import { initStarRating } from '../plugins/init_star_rating';
+
 
 import { initFlatpickr } from '../plugins/init_flatpickr';
 // Internal imports, e.g:
