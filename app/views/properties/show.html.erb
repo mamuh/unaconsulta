@@ -16,7 +16,7 @@
             <% review.photos.each do |photo| %>
 
 
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 small-pic" %>
+              <%= cl_image_tag photo.key, crop: :fill, width: 204, class: "my-2 smoll-pic" %>
             <% end %>
           <% end %>
         </div>
@@ -44,7 +44,7 @@
         <% if review.photos.attached? %>
           <div class="thumb-photos py-2">
             <% review.photos.each do |photo| %>
-              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "small-pic") %>
+              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "smoll-pic") %>
             <% end %>
           </div>
         <% end %>
