@@ -1,20 +1,17 @@
+<h2 class="my-5 d-flex justify-content-center">Your previous reviews</h2>
+
 <% current_user.reviews.each do |review| %>
-  <div class="user-page-review-card bg-white m-3 p-3">
+<div class="user-review-card mb-4">
+  <%= cl_image_tag(review.photos.sample.key, crop: :fill, width: 150, class: "small-pic") %>
+  <div class="user-page-review-infos bg-white ml-3">
     <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
-    <p><%= review.content %></p>
+    <p class="blockquote-footer"><%= review.content %></p>
     <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
     <p>Property in
-      <%= link_to property_path(review.property) do %>
+      <%= link_to property_path(review.property), class: "link-user-review" do %>
       <%= review.property.address %>
       <% end %>
     </p>
   </div>
+</div> 
 <% end %>
-
-<style type="text/css">
-  .user-page-review-card {
-    border-radius: 5px;
-  }
-</style>
-
-
