@@ -30,8 +30,6 @@ import { initSearchForm } from "../plugins/init_search_form";
 import { initModal } from '../plugins/init_modal';
 import { initStarRating } from '../plugins/init_star_rating';
 
-import flatpickr from "flatpickr";
-
 import { initFlatpickr } from '../plugins/init_flatpickr';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
