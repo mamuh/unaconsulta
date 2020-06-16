@@ -16,12 +16,7 @@
 </head>
 
 <body>
-  <% if action_name == 'home' %>
   <%= render 'shared/navbar_home' %>
-  <% else %>
-  <%= render 'shared/navbar' %>
-  <% end %>
-
 
   <% unless @home_page %>
   <div class="container mt-5 pt-3">
