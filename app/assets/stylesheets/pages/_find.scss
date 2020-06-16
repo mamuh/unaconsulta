@@ -8,13 +8,15 @@
         padding: 37px 0px;
         input {
             background-color: #e2e2e2;
+            width: 100%;
           }
         }
         #review-form {
             display: flex;
             align-items: center;
+            width: 90%;
             .algolia-places {
-              width: 596px;
+              width: 100%;
               input {
                 background-color: #e2e2e2;
                 color: grey;
