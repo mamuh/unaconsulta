@@ -1,20 +1,12 @@
 
 header {
-	background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
-	url("https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1346&q=80");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 389px;
-	padding: 20px 50px 20px 0px;
+  height: 70vh;
 }
 
 header .header-content {
-	display: flex;
-	justify-content: center;
-	align-items: end;
-	flex-direction: column;
-  padding: 85px 72px 41px 55px;
+	height: 100%;
+  width: 100%;
+  background-color: #e2e2e2;
 }
 
 header .header-content p {
@@ -38,13 +30,15 @@ header .header-content h1 {
 
 header {
   position:relative;
-  .search-form {
+  .search-form-banner {
     position: absolute;
     bottom: -67px;
     background-color: white;
     box-shadow: 0px 2px 6px grey;
     left: 0;
     right: 0;
+    width: 80%;
+    margin: auto;
     .form-inline {
       margin: 0;
       padding: 37px 0px;
@@ -57,8 +51,9 @@ header {
     #main-form {
       display: flex;
       align-items: center;
+      width: 90%;
       .algolia-places {
-        width: 596px;
+        width: 100%;
         input {
           background-color: #e2e2e2;
           color: grey;
@@ -81,17 +76,6 @@ header {
       }
     }
   }
-}
-.btn-esq {
-  color: yellow;
-  background-color: blue;
-  position: absolute;
-}
-
-.btn-dir {
-  color: yellow;
-  background-color: blue;
-  position: absolute;
 }
 
 .propaganda {

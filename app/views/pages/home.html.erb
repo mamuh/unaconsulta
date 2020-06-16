@@ -3,49 +3,58 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <h1>Find properties</h1>
-            <h1>or leave reviews</h1>
-          <p>Research tenants' reputation before renting.<br>Write a review and leave your opinion<br>about the places you've lived.</p>
+          <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1507086182422-97bd7ca2413b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80);">
+            <div class="container-banner">
+              <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+              <p>Change your life and learn to code at one of our campuses around the world.</p>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
-          <h1>See our reviews </h1>
-          <p>Help other people who need information<br> by leaving a review of the <br>places you have lived.</p>
+            <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=673&q=80);">
+              <div class="container-banner">
+                <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+                <p>Change your life and learn to code at one of our campuses around the world.</p>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
-          <h1>Here you have information</h1>
-          <h1>through other users.</h1>
-          <p>Find out about the condition of the property, <br>neighborhood and location.</p>
+          <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1534595038511-9f219fe0c979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
+            <div class="container-banner">
+              <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+              <p>Change your life and learn to code at one of our campuses around the world.</p>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="banner-buttons">
+        <a class="btn-esq" href="#carouselExampleControls" role="button" data-slide="prev">
+          <i class="fas fa-arrow-left"></i>
+        </a>
 
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <a class="btn-rgt" href="#carouselExampleControls" role="button" data-slide="next">
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
 
 
-    <div class="search-form">
+    <div class="search-form-banner">
 
         <div class="form-group form-inline d-flex justify-content-center align-items-center">
           <%= form_tag nil, id: "main-form", method: :get do %>
           <%= text_field_tag :query,
               params[:query],
-              class: "form-control user_input",
+              class: "form-control user_input w-100",
               placeholder: "Type a property address",
               required: true
             %>
           <button id="find" class="btn-find">
-            <i class="fas fa-location-arrow"></i>
+            <i class="fas fa-search"></i>
           </button>
           <% end %>
         </div>
-        <div class="arrows" style="position:relative">
-          <a class="carousel-control-prev btn-esq" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </div>
+
     </div>
   </div>
 

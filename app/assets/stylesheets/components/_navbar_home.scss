@@ -1,8 +1,11 @@
 nav {
-	padding: 20px;
+	padding: 20px 0px;
 	position: absolute;
 	width: 100%;
   z-index: 10;
+  .navbar-brand-home {
+    margin-top: 5px;
+  }
 }
 
 .avatar {
@@ -14,7 +17,7 @@ nav .nav-container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 
