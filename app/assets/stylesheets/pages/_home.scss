@@ -50,8 +50,9 @@ header {
     #main-form {
       display: flex;
       align-items: center;
+      width: 90%;
       .algolia-places {
-        width: auto;
+        width: 100%;
         input {
           background-color: #e2e2e2;
           color: grey;

@@ -45,12 +45,12 @@
           <%= form_tag nil, id: "main-form", method: :get do %>
           <%= text_field_tag :query,
               params[:query],
-              class: "form-control user_input",
+              class: "form-control user_input w-100",
               placeholder: "Type a property address",
               required: true
             %>
           <button id="find" class="btn-find">
-            <i class="fas fa-location-arrow"></i>
+            <i class="fas fa-search"></i>
           </button>
           <% end %>
         </div>
