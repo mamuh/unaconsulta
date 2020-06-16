@@ -20,15 +20,15 @@ header .header-content p {
 	padding: 10px 0 30px 0;
 	font-family: 'Poppins', sans-serif;
 	color: #fff;
-	font-size: 16px;
-	line-height: 16px;
+	font-size: 18px;
+	line-height: 24px;
 	font-weight: 500;
 	max-width: 600px;
 	text-align: left;
 }
 
 header .header-content h1 {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: bolder;
 	font-family: "Poppins";
 	color: #fff;
@@ -62,7 +62,7 @@ header {
         }
       }
       .btn-find {
-        background-color: var(--button-color-signup);
+        background-color: #514FB0;
         outline: none;
         border: none;
         padding: 7px 20px;
@@ -80,4 +80,65 @@ header {
   color: yellow;
   background-color: blue;
   position: absolute;
+}
+
+.btn-dir {
+  color: yellow;
+  background-color: blue;
+  position: absolute;
+}
+
+.propaganda {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 120px;
+  margin-bottom: 40px;
+  height: 370px;
+  .text-reviews {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 50px 20px 0px;
+    flex: 0 0 60%;
+    #local {
+      font-family: 'Poppins', sans-serif;
+      color: #514FB0;
+      font-weight: bold;
+    }
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+    }
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+    }
+    .home-btn {
+      width: 30%;
+      background-color: #514FB0;
+      color: white;
+      padding: 8px 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .imagens-card-home {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 40%;
+    justify-content: space-between;
+    img.imagem-maior {
+      width: 433px;
+    }
+    .imagens-menores {
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 210px;
+      }
+    }
+  }
 }

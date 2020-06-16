@@ -16,3 +16,7 @@
 /* In the "external libraries" section */
 @import 'mapbox-gl/dist/mapbox-gl';
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+
+body {
+  background-color: white;
+}

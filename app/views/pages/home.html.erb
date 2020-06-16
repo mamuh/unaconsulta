@@ -3,17 +3,18 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <h1>Find properties<br>or leave reviews</h1>
+          <h1>Find properties</h1>
+            <h1>or leave reviews</h1>
           <p>Research tenants' reputation before renting.<br>Write a review and leave your opinion<br>about the places you've lived.</p>
         </div>
         <div class="carousel-item">
-          <h1>Find a properties</h1>
-          <h1>Or leave reviews</h1>
-          <p>Research tenants' reputation before renting.<br>Write a review and leave your opinion<br>about the places you've lived.</p>
+          <h1>See our reviews </h1>
+          <p>Help other people who need information<br> by leaving a review of the <br>places you have lived.</p>
         </div>
         <div class="carousel-item">
-          <h1>TESTADANDO 2<br>or leave reviews</h1>
-          <p>Research tenants' reputation before renting.<br>Write a review and leave your opinion<br>about the places you've lived.</p>
+          <h1>Here you have information</h1>
+          <h1>through other users.</h1>
+          <p>Find out about the condition of the property, <br>neighborhood and location.</p>
         </div>
       </div>
 
@@ -49,4 +50,24 @@
   </div>
 
 </header>
+<div class="propaganda">
+  <div class="text-reviews">
+    <p id="local">VILA MARIANA, SP</p>
+    <div class="text-info-home">
+      <h1>Trust and quality are our motto</h1>
+      <p>To give you an idea of the types of deals we’re talking about, how about $130 round-trip from New York to Milan, Italy? That’s not the base fare before tax—that’s the total fare including all taxes and fees. Other examples include $280 roundtrip from Los Angeles to Dubai in the UAE, and $298 from Houston to Bombay, India.</p>
+    </div>
+    <%= link_to root_path, class: "home-btn" do %>
+      popular reviews <i class="fas fa-arrow-right"></i>
+    <% end %>
+  </div>
 
+  <div class="imagens-card-home">
+    <div class="imagens-menores">
+      <%= image_tag "interior1.jpg" %>
+      <%= image_tag "interior2.jpg" %>
+    </div>
+    <%= image_tag "cozinha1.jpg", class: "imagem-maior" %>
+  </div>
+
+</div>
