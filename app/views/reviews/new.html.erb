@@ -1,16 +1,16 @@
 
-<h2>Reviewing property in <%= @property.address %></h2>
+<h2 class="mb-5">Reviewing property in <%= @property.address %></h2>
 
 
 <%= simple_form_for [@property, @review], class: 'form-section' do |f| %>
 
 <div class="d-flex">
-  <%= f.input :content, input_html: { id: 'content-review' }, label: "Tell us about your experience with this property" %>
+  <%= f.input :content, input_html: { id: 'content-review', class: "bg-white" }, label: "Tell us about your experience with this property" %>
   <div class="select-fields">
-    <%= f.input :checkin, input_html: {id: "booking_start_date"}, as: :string, type: :text, label: "Date you moved in" %>
+    <%= f.input :checkin, input_html: {id: "booking_start_date", class: "bg-white"}, as: :string, type: :text, label: "Date you moved in" %>
     <%= f.input :checkout, input_html: { id: "booking_end_date" }, as: :string, type: :text, label: "Date you moved out" %>
     <%= f.input :stars, collection: (1..5).to_a, label: "Rate this property" %>
-<%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos" %>
     <%= f.submit "Leave review >", class: "btn btn-purple" %>
   </div>
 </div>

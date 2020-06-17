@@ -1,4 +1,4 @@
-.signup-container {
+.edit-container {
 	margin: 20px auto;
 	width: 700px;
 	padding: 40px;
@@ -6,13 +6,13 @@
 	border-radius: 5px;
 }
 
-.signup-container h2 {
+.edit-container h2 {
 	text-align: center;
 	font-family: "Poppins";
 	font-weight: 700;
 }
 
-.signup-container {
+.edit-container {
 	.form-control {
 		display: block;
 		width: 100%;
@@ -30,7 +30,7 @@
 	}
 }
 
-.signup-container {
+.edit-container {
 	fieldset.user_remember_me {
 		margin: 10px 0;
 	}
@@ -41,7 +41,7 @@
 	}
 }
 
-.signup-container {
+.edit-container {
 	.form-actions {
 		input.btn {
 			width: 100%;
@@ -54,7 +54,7 @@
 	}
 }
 
-.signup-container {
+.edit-container {
 	.form-control:focus {
 		outline: none;
 		box-shadow: none;

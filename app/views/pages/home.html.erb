@@ -5,24 +5,24 @@
         <div class="carousel-item active">
           <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1507086182422-97bd7ca2413b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80);">
             <div class="container-banner">
-              <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-              <p>Change your life and learn to code at one of our campuses around the world.</p>
+              <h1>Find a property or leave reviews</h1>
+              <p>Find out if a property is well rated before rentin it. Leave a review and let the world know your opinion about a property or room you've lived in.</p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
             <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=673&q=80);">
               <div class="container-banner">
-                <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-                <p>Change your life and learn to code at one of our campuses around the world.</p>
+                <h1>Find honest reviews</h1>
+                <p>Make informed decisions before renting or buying a property. Make sure you're getting non-biased information from previous tenants.</p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
           <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1534595038511-9f219fe0c979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
             <div class="container-banner">
-              <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-              <p>Change your life and learn to code at one of our campuses around the world.</p>
+              <h1>Sharing information and transparency</h1>
+              <p>Find honest reviews from previous tenants. Estate agencies and landlords will never hide precious information from you again.</p>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
 
     <div class="search-form-banner">
         <div class="form-group form-inline d-flex justify-content-center align-items-center">
-        <p class="text-city">City, neighborhood or properties.</p>
+        <p class="text-city">Search for cities, neighbourhoods or property addresses.</p>
           <%= form_tag nil, id: "main-form", method: :get do %>
           <%= text_field_tag :query,
               params[:query],
@@ -64,7 +64,10 @@
     <p id="local">About us</p>
     <div class="text-info-home">
       <h1>Una Consulta</h1>
-      <p>Our website is aimed at people who want to know more about the conditions in which the properties available to rent or buy are found, from the point of view of former residents through reviews. Our goal is to bring information to our users and give them the opportunity to give their opinion about the environment in which they have lived.</p>
+      <p>Our website is aimed at people who want to know more about a property, its neighbourhood and surroundings before actually renting it.
+      Some properties look awsome at first sight, only to be found later that they're not as good as they seemed.
+      Tenants can leave honest reviews in unaconsulta so we can achive our goal, which is to bring information and transparency to our users and give them the opportunity to have their voices heard.
+</p>
     </div>
     <%= link_to root_path, class: "home-btn" do %>
       popular reviews <i class="fas fa-arrow-right"></i>
