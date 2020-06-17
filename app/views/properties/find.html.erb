@@ -1,23 +1,25 @@
 <div class="py-5 find-review">
 
   <% if @properties.size == 0 %>
-    <div class="d-flex align-items-center justify-content-center">
-      <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
-      <h2><%= link_to "Review it >", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-3"  %></h2>
-    </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
+    <h2>
+      <%= link_to "Review it >", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-3"  %>
+    </h2>
+  </div>
   <% else %>
-   <h5>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h5>
+  <h5>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h5>
   <% end %>
 
   <div class="search-form mb-3 bg-white rounded">
     <div class="form-group form-inline d-flex justify-content-center align-items-center mb-3">
-        <%= form_tag properties_find_path, id: "review-form", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control user_input",
-          onchange: "this.form.submit();",
-          placeholder: "Find a property"
-        %>
+      <%= form_tag properties_find_path, id: "review-form", method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control user_input",
+      onchange: "this.form.submit();",
+      placeholder: "Find a property"
+      %>
       <button class="btn-find-2">
         <i class="fas fa-location-arrow"></i>
       </button>
@@ -29,56 +31,54 @@
   <div class="d-flex justify-content-between mt-3">
     <% if @properties.size > 0 %>
 
-      <div class="d-block cards-container mr-2">
-        <% @properties.each do |prop| %>
-        <div class="card-review d-flex mb-5 mr-5 bg-white">
-          <% if prop&.reviews&.last&.photos&.attached? %>
-            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 170) %>
-          <% else %>
-            <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
-          <% end %>
+    <div class="d-block cards-container mr-2">
+      <% @properties.each do |prop| %>
+      <div class="card-review d-flex mb-5 mr-5 bg-white">
+        <% if prop&.reviews&.last&.photos&.attached? %>
+        <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 170) %>
+        <% else %>
+        <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
+        <% end %>
 
-          <div class="card-content p-3">
-            <div class="card-infos">
-              <strong><%= prop.address %></strong>
+        <div class="card-content p-3">
+          <div class="card-infos">
+            <strong><%= prop.address %></strong>
+            <% if prop.reviews.count > 0 %>
+            <small>Last reviewed on <%= prop&.reviews&.last&.created_at&.strftime("%d-%m-%Y") %></small>
+            <% else %>
+            <small>No reviews for this property</small>
+            <% end %>
+          </div>
+
+          <div class="btn-group links" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
               <% if prop.reviews.count > 0 %>
-                <small>Last reviewed on <%= prop&.reviews&.last&.created_at&.strftime("%d-%m-%Y") %></small>
-              <% else %>
-                <small>No reviews for this property</small>
+              <%= link_to "See all reviews", property_path(prop), class: "dropdown-item" %>
               <% end %>
-            </div>
-
-            <div class="btn-group links" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-angle-right"></i>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
-                <% if prop.reviews.count > 0 %>
-                  <%= link_to "See all reviews", property_path(prop), class: "dropdown-item" %>
-                <% end %>
-              </div>
             </div>
           </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
+    </div>
 
     <% end %>
 
-    <div id="map"
-        style="width: 100%; height: 70vh;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map" style="width: 100%; height: 70vh;" data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
 <!--
-<style type="text/css">
-
-  @media (max-width: 992px) {
-  #map {
-    width: 100%
-  }
-</style> -->
-
+  <style type="text/css">
+    
+    @media (max-width: 992px) {
+      #map {
+        width: 100%
+      }
+    </style> -->
