@@ -10,7 +10,7 @@
     <% end %>
     <div class="user-page-review-infos bg-white ml-3">
       <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
-      <p class="blockquote-footer"><%= review.content %></p>
+      <p class="blockquote-footer review-content"><%= review.content %></p>
       <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
       <p>Property in
         <%= link_to property_path(review.property), class: "link-user-review" do %>
