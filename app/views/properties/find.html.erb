@@ -24,7 +24,7 @@
   </div>
   <div class="d-flex justify-content-between mt-3">
     <% if @properties.size > 0 %>
-      <div class="d-block cards-container mr-2">
+      <div class="d-block cards-container">
         <% @properties.each do |prop| %>
         <div class="card-review d-flex mb-5 mr-5 bg-white">
           <% if prop&.reviews&.last&.photos&.attached? %>
