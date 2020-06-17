@@ -1,45 +1,49 @@
-<div class='d-flex justify-content-around profile-page-main'>
-  <div class="bg-white text-center p-4 user-profile">
-    <div class="photo">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill, width: 200, height: 200, class: "avatar-lg rounded-circle" %>
-      <% elsif current_user.facebook_picture_url %>
-        <%= cl_image_tag current_user.facebook_picture_url, crop: :fill, width: 200, height: 200, class: "avatar-lg rounded-circle" %>
-      <% else %>
-        <img src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4"
-          class="avatar-lg" alt="" width="200">
-      <% end %>
+ <div class="pb-3">
+
+  <div class='d-flex justify-content-around profile-page-main'>
+    <div class="bg-white text-center p-4 user-profile">
+      <div class="photo">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, width: 200, height: 200, class: "avatar-lg rounded-circle" %>
+        <% elsif current_user.facebook_picture_url %>
+          <%= cl_image_tag current_user.facebook_picture_url, crop: :fill, width: 200, height: 200, class: "avatar-lg rounded-circle" %>
+        <% else %>
+          <img src="https://avatars1.githubusercontent.com/u/302001?s=88&v=4"
+            class="avatar-lg" alt="" width="200">
+        <% end %>
+      </div>
+      <div class="user-name">
+        <% if current_user.name %>
+          <h2 class="my-3 pb-2 border-bottom"><%= current_user.name %></h2>
+        <% else %>
+          <h2 class="mt-2"><%= current_user.first_name %></h2>
+        <% end %>
+        <p><%= current_user.email %></p>
+        <p>Our member since: <%= current_user.created_at.strftime("%d-%m-%Y") %></p>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-green-outline" %>
+      </div>
+      </ul>
+      <div class="card-body">
+        <%= link_to "All my reviews", user_reviews_path, class: "btn btn-purple-outline" %>
+      </div>
     </div>
-    <div class="user-name">
+
+    <div class="bg-white user-profile-review-cont p-4">
       <% if current_user.name %>
-        <h2 class="my-3 pb-2 border-bottom"><%= current_user.name %></h2>
+        <h2 class="mb-2">Previous reviews by <%= current_user.name %></h2>
+        <small class="pb-4"><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
       <% else %>
-        <h2 class="mt-2"><%= current_user.first_name %></h2>
+        <h2 class="mb-2">Latest reviews by <%= current_user.first_name %></h2>
+        <small><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
       <% end %>
-      <p><%= current_user.email %></p>
-      <p>Our member since: <%= current_user.created_at.strftime("%d-%m-%Y") %></p>
-      <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-green-outline" %>
-    </div>
-    </ul>
-    <div class="card-body">
-      <%= link_to "All my reviews", user_reviews_path, class: "btn btn-purple-outline" %>
+        <% current_user.reviews.first(5).each do |review| %>
+          <div class="user-profile-card my-3">
+            <div class="card-body-content border-bottom py-3">
+              <%= review.content %>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 
-  <div class="bg-white user-profile-review-cont p-4">
-    <% if current_user.name %>
-      <h2 class="mb-2">Previous reviews by <%= current_user.name %></h2>
-      <small class="pb-4"><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
-    <% else %>
-      <h2 class="mb-2">Latest reviews by <%= current_user.first_name %></h2>
-      <small><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
-    <% end %>
-      <% current_user.reviews.first(5).each do |review| %>
-        <div class="user-profile-card my-3">
-          <div class="card-body-content border-bottom py-3">
-            <%= review.content %>
-          </div>
-        </div>
-      <% end %>
-  </div>
-</div>
+ </div>

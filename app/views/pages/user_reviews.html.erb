@@ -1,21 +1,23 @@
-<h2 class="my-5 d-flex justify-content-center">Your previous reviews</h2>
+<div class="mb-3">
+  <h2 class="mt-2 pb-3 d-flex justify-content-center">Your previous reviews</h2>
 
-<% current_user.reviews.each do |review| %>
-<div class="user-review-card mb-4">
-  <% if review.photos.sample %>
-    <%= cl_image_tag(review.photos.sample.key, crop: :fill, width: 150, class: "small-pic") %>
-  <% else %>
-    <%= cl_image_tag "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80", crop: :fill, width: 150, class: "small-pic" %>
-  <% end %>
-  <div class="user-page-review-infos bg-white ml-3">
-    <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
-    <p class="blockquote-footer"><%= review.content %></p>
-    <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
-    <p>Property in
-      <%= link_to property_path(review.property), class: "link-user-review" do %>
-      <%= review.property.address %>
-      <% end %>
-    </p>
+  <% current_user.reviews.each do |review| %>
+  <div class="user-review-card mb-4">
+    <% if review.photos.sample %>
+      <%= cl_image_tag(review.photos.sample.key, crop: :fill, width: 150, class: "small-pic") %>
+    <% else %>
+      <%= cl_image_tag "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80", crop: :fill, width: 150, class: "small-pic" %>
+    <% end %>
+    <div class="user-page-review-infos bg-white ml-3">
+      <b>Reviewed on <%= review.created_at.strftime("%d-%m-%Y") %></b>
+      <p class="blockquote-footer"><%= review.content %></p>
+      <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+      <p>Property in
+        <%= link_to property_path(review.property), class: "link-user-review" do %>
+        <%= review.property.address %>
+        <% end %>
+      </p>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>

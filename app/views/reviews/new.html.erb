@@ -11,7 +11,7 @@
     <%= f.input :checkout, input_html: { id: "booking_end_date" }, as: :string, type: :text, label: "Date you moved out" %>
     <%= f.input :stars, collection: (1..5).to_a, label: "Rate this property" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos" %>
-    <%= f.submit "Leave review >", class: "btn btn-purple" %>
+    <%= f.submit "Leave review >", class: "btn btn-purple", style: "width: 100%;" %>
   </div>
 </div>
 
