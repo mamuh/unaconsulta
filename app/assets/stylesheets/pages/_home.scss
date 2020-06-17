@@ -16,7 +16,6 @@ header .header-content p {
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 500;
-	max-width: 600px;
 	text-align: left;
 }
 
@@ -39,6 +38,16 @@ header {
     right: 0;
     width: 80%;
     margin: auto;
+    .text-city {
+      font-family: 'Poppins', sans-serif;
+      color: #514FB0;
+      padding: 0;
+      margin-left: 0;
+      width: 100%;
+      font-size: 15px;
+      margin-left: 55px;
+      margin-bottom: 10px;
+    }
     .form-inline {
       margin: 0;
       padding: 37px 0px;
