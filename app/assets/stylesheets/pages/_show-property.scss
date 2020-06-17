@@ -1,6 +1,6 @@
 .small-photos {
   height: 30vh;
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 .fa-star {
@@ -9,7 +9,7 @@
 
 .review-content-container {
   height: 70vh;
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 #smoll-pic:hover {
@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-  /* The Modal (background) */
+/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
