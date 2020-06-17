@@ -11,6 +11,10 @@
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .card-infos b {
+        font-weight: 600;
+    }
     .links {
         position: absolute;
         bottom: 0;

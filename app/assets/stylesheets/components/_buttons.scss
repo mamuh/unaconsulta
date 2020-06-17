@@ -14,7 +14,7 @@
 	padding: 15px 25px;
 	margin-left: 12px;
 	border-radius: 3px;
-	font-family: var(--button-text-style);
+	font-family: 'Poppins', sans-serif;
 	border: 0;
 }
 
@@ -23,12 +23,13 @@
 	background-color: var(--button-color-signin);
 	outline: none;
 	border: none;
-	padding: 10px 20px;
+	padding: 10px 25px;
 	color: var(--text-color);
-	font-family: var(--button-text-style);
+	font-family: 'Poppins', sans-serif;;
 	font-weight: bold;
 	border-radius: 3px;
 	border: 0;
+  width: 103px;
 }
 
 .btn-sign-in:hover {
@@ -44,10 +45,11 @@
 	padding: 10px 20px;
 	margin-left: 10px;
 	color: var(--text-color);
-	font-family: var(--button-text-style);
+	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	border-radius: 3px;
 	border: 0;
+  width: 103px;
 }
 
 .btn-sign-up:hover {
@@ -63,7 +65,7 @@
 	padding: 10px 20px;
 	margin-left: 10px;
 	color: var(--text-color);
-	font-family: var(--button-text-style);
+	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	border-radius: 3px;
 	border: 0;
@@ -80,7 +82,7 @@
 	padding: 5px 10px;
 	margin-left: 10px;
 	color: white;
-	font-family: var(--button-text-style);
+	font-family: 'Poppins', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
 	border-radius: 3px;
@@ -90,11 +92,45 @@
 .btn-purple {
 	background-color: #4717b0 !important;
 	color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-purple:hover {
 	background-color: #210560 !important;
 	color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-purple-outline {
+  background-color: transparent;
+  border: 1px solid #4717b0;
+  color: #4717b0;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-purple-outline:hover {
+  background-color: #4717b0;
+  border: 1px solid #4717b0;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-green-outline {
+  background-color: transparent;
+  border: 1px solid #21b086;
+  color: #21b086;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-green-outline:hover {
+  background-color: #21b086;
+  border: 1px solid #21b086;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
 }
 
 // Log In page button style
@@ -125,3 +161,9 @@
     opacity: 1;
     color: white;
 }
+// .btn-link-home {
+//   background-color: white;
+//   font-family: 'Poppins', sans-serif;
+//   text-align: center;
+//   color: black
+// }
