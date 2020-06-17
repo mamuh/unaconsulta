@@ -7,12 +7,11 @@ nav {
     top: 0;
   }
   .navbar-brand-home {
-    padding:  5px 5% 0px 10%;
+    padding:  5px 5% 0px 11%;
     background-color: #514FB0;
     height: 60px;
     display: flex;
     align-items: center;
-
   }
   ul {
     height: 60px;
@@ -23,7 +22,7 @@ nav {
       height: 100%;
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      font-weight: lighter;
+      font-weight: bold;
     }
   }
 }
