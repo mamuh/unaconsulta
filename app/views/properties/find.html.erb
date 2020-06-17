@@ -1,7 +1,7 @@
 <div class="py-5 find-review">
   <% if @properties.size == 0 %>
     <div class="d-flex align-items-center justify-content-center">
-      <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
+      <h5>There are no reviews yet for this property in "<strong><%= @query %></strong>"</h5>
       <h2><%= link_to "Review it >", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-3"  %></h2>
     </div>
   <% else %>
