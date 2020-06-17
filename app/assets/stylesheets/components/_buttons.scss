@@ -97,6 +97,38 @@
 	color: white;
 }
 
+.btn-purple-outline {
+  background-color: transparent;
+  border: 1px solid #4717b0;
+  color: #4717b0;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-purple-outline:hover {
+  background-color: #4717b0;
+  border: 1px solid #4717b0;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-green-outline {
+  background-color: transparent;
+  border: 1px solid #21b086;
+  color: #21b086;
+  padding: 7px;
+  border-radius: 2px;
+}
+
+.btn-green-outline:hover {
+  background-color: #21b086;
+  border: 1px solid #21b086;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
+}
+
 // Log In page button style
 .btn-facebook {
 	background: #3b5998;
