@@ -25,3 +25,10 @@
         font-weight: bold;
     }
   }
+
+  .review-content {
+    width: 80%;
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
