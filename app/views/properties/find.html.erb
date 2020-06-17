@@ -1,5 +1,4 @@
 <div class="py-5 find-review">
-
   <% if @properties.size == 0 %>
     <div class="d-flex align-items-center justify-content-center">
       <h5>No properties matched your search for "<strong><%= @query %></strong>"</h5>
@@ -8,7 +7,6 @@
   <% else %>
    <h5>Showing <%= @properties.size %> <%= "result".pluralize(@properties.size) %> for your search</h5>
   <% end %>
-
   <div class="search-form mb-3 bg-white rounded">
     <div class="form-group form-inline d-flex justify-content-center align-items-center mb-3">
         <%= form_tag properties_find_path, id: "review-form", method: :get do %>
@@ -24,11 +22,8 @@
       <% end %>
     </div>
   </div>
-
-
   <div class="d-flex justify-content-between mt-3">
     <% if @properties.size > 0 %>
-
       <div class="d-block cards-container mr-2">
         <% @properties.each do |prop| %>
         <div class="card-review d-flex mb-5 mr-5 bg-white">
@@ -37,7 +32,6 @@
           <% else %>
             <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
           <% end %>
-
           <div class="card-content p-3">
             <div class="card-infos">
               <b><%= prop.address %></b>
@@ -47,7 +41,6 @@
                 <small>No reviews for this property</small>
               <% end %>
             </div>
-
             <div class="btn-group links" role="group">
               <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-angle-right"></i>
@@ -63,14 +56,12 @@
         </div>
         <% end %>
       </div>
-
     <% end %>
-
     <div id="map"
         style="width: 100%; height: 70vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-</div>
 
+</div>
