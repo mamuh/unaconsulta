@@ -19,6 +19,44 @@
 }
 
 /* Navbar Buttons */
+.btn-link-home{
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 80%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+    color: black;
+    margin: 0px 25px 0px 25px;
+    font-size: 16px;
+  }
+  .btn-link-home:hover {  border-bottom: 3px solid #514FB0; }
+
+  .btn-link-properties{
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 80%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+    color: black;
+    margin: 0px 25px 0px 25px;
+    font-size: 16px;
+  }
+  .btn-link-properties:hover {  border-bottom: 3px solid #514FB0; }
+
+  .btn-link-reviews{
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 80%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+    color: black;
+    margin: 0px 25px 0px 25px;
+    font-size: 16px;
+  }
+  .btn-link-reviews:hover {  border-bottom: 3px solid #514FB0; }
 .btn-sign-in {
 	background-color: var(--button-color-signin);
 	outline: none;
@@ -129,9 +167,4 @@
     opacity: 1;
     color: white;
 }
-// .btn-link-home {
-//   background-color: white;
-//   font-family: 'Poppins', sans-serif;
-//   text-align: center;
-//   color: black
-// }
+
