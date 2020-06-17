@@ -1,64 +1,64 @@
-<h1>Reviews for property in <%= @property.address.split(",").first %>, <%= @property.address.split(",")[-2] %></h1>
+<h1>Reviews for  <%= @property.address.split(",").first %>, <%= @property.address.split(",")[-2] %></h1>
 
 <%= link_to "<< Back to search results", {action: "find",  query: @property.address }  %>
 
 <br><br>
 <div class="row">
   <div class="col-xs-12 col-lg-7">
-
+    
     <div class="review-photos-container">
-
+      
       <div class="property-photos main-photo bg-dark mb-2 rounded">
       </div>
-
-        <div class="property-photos small-photos d-flex justify-content-between flex-wrap mb-3">
-          <% @property.reviews.each do |review| %>
-            <% review.photos.each do |photo| %>
-
-
-              <%= cl_image_tag photo.key, crop: :fill, width: 204, height: 130, class: "my-2 smoll-pic" %>
-            <% end %>
-          <% end %>
-        </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="review-content-container col-xs-12 col-lg-5">
-
-    <% @property.reviews.order("created_at desc").each do |review| %>
-
-      <div class="card-review bg-white p-3 rounded mb-3 shadow">
-        <div class="d-flex justify-content-between">
-          <% if review.user.name %>
-            <strong>Reviewed by <%= review.user.name %></strong>
-          <% else %>
-            <strong>Reviewed by <%= review.user.first_name %></strong>
-          <% end %>
-          <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
-        </div>
-        <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
-        <p><%= review.content %></p>
-        <% if review.photos.attached? %>
-          <div class="thumb-photos py-2">
-            <% review.photos.each do |photo| %>
-              <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "smoll-pic") %>
-            <% end %>
-          </div>
+      
+      <div class="property-photos small-photos d-flex justify-content-between flex-wrap mb-3">
+        <% @property.reviews.each do |review| %>
+        <% review.photos.each do |photo| %>
+        
+        
+        <%= cl_image_tag photo.key, crop: :fill, width: 204, height: 130, class: "my-2 smoll-pic" %>
         <% end %>
-        <% if current_user == review.user %>
-
-            <%= link_to  "Edit",  edit_property_review_path(@property, review) %> |
-            <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
-
         <% end %>
       </div>
-
+      
+    </div>
+    
+  </div>
+  
+  
+  <div class="review-content-container col-xs-12 col-lg-5">
+    
+    <% @property.reviews.order("created_at desc").each do |review| %>
+    
+    <div class="card-review bg-white p-3 rounded mb-3 shadow">
+      <div class="d-flex justify-content-between">
+        <% if review.user.name %>
+        <strong>Reviewed by <%= review.user.name %></strong>
+        <% else %>
+        <strong>Reviewed by <%= review.user.first_name %></strong>
+        <% end %>
+        <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
+      </div>
+      <small><%= review.created_at.strftime("%d-%m-%Y") %></small>
+      <p><%= review.content %></p>
+      <% if review.photos.attached? %>
+      <div class="thumb-photos py-2">
+        <% review.photos.each do |photo| %>
+        <%= cl_image_tag(photo.key, crop: :fit, width: 100, class: "smoll-pic") %>
+        <% end %>
+      </div>
+      <% end %>
+      <% if current_user == review.user %>
+      
+      <%= link_to  "Edit",  edit_property_review_path(@property, review) %> |
+      <%= link_to  '<i class="fas fa-trash-alt"></i>'.html_safe, review_path(review), method: :delete %>
+      
+      <% end %>
+    </div>
+    
     <% end %>
   </div>
-
+  
 </div>
 
 <div class="my-3">
@@ -72,13 +72,13 @@
 
 
 <style type="text/css">
-    .main-photo {
+  .main-photo {
     height: 40vh;
     background-image: url(<% if @property&.reviews&.first&.photos&.attached? %>
-      <%= cl_image_path @property&.reviews&.first&.photos&.first.key, crop: :fit, width: 700; %>
-      <% else %>
-      "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80"
-      <% end %>);
+    <%= cl_image_path @property&.reviews&.first&.photos&.first.key, crop: :fit, width: 700; %>
+    <% else %>
+    "https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80"
+    <% end %>);
   }
 </style>
 
