@@ -17,7 +17,7 @@
           placeholder: "Find a property"
         %>
       <button class="btn-find-2">
-        <i class="fas fa-location-arrow"></i>
+        <i class="fas fa-search"></i>
       </button>
       <% end %>
     </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="btn-group links" role="group">
               <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-arrow-right"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <%= link_to "Leave a review", new_property_review_path(prop), class: "dropdown-item border-bottom" %>
@@ -63,5 +63,4 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
 </div>
