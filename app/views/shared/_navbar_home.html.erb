@@ -1,11 +1,7 @@
 <!-- Navbar Section -->
-<% if action_name == 'home' %>
+
 <nav>
 
-<% else %>
-<nav class="not-home">
-
-<% end %>
   <div class="nav-container">
     <%= link_to "/", class: "navbar-brand-home" do %>
       <%= image_tag "logo-una-consulta.svg" %>
@@ -49,6 +45,9 @@
       <% else %>
       <%= link_to "LOG IN", new_user_session_path, class: "btn-sign-in" %>
       <%= link_to "SIGN UP", new_user_registration_path , class: "btn-sign-up" %>
+     <!--  <%#= link_to "HOME", new_user_registration_path , class: "btn-link-home" %>
+      <%#= link_to "PROPERTIES", new_user_registration_path , class: "btn-link-properties" %>
+      <%#= link_to "REVIEWS", new_user_registration_path , class: "btn-link-reviews" %> -->
       <!-- <li><a href="#" class="btn-sign-in">Sign In</a></li>
         <li><a href="#" class="btn-sign-up">Sign Up</a></li> -->
       <% end %>
