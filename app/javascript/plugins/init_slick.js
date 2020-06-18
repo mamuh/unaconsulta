@@ -3,25 +3,31 @@ window.$ = window.jQuery = $;
 import 'slick-carousel';
 
 
-// const reviews = document.querySelectorAll('.card-review');
+const reviews = document.querySelectorAll('.card-review');
+
 
 const slick = () => {
-    $(document).ready(function(){
-      $('.property-photos').slick({
-        slidesToShow: 3,
-        dots:true,
-        arrows: true,
-        centerMode: true,
-        focusOnSelect: true
-      });
-      // $('.review-content-container').slick({
-      //   dots: true,
-      //   vertical: true,
-      //   slidesToScroll: reviews.length,
-      //   slidesToShow: 1,
-      //   verticalSwiping: true,
-      // });
+  $(document).ready(function(){
+    $('.property-photos').slick({
+      slidesToShow: 3,
+      dots:true,
+      centerMode: true,
+      focusOnSelect: true
     });
+    $('.review-content-container').slick({
+      vertical: true,
+      verticalSwiping: true,
+      slidesToShow: 2,
+      slidesToScroll: reviews.length,
+      swipeToSlide: true
+    });
+    // $('.thumb-photos').slick({
+    //   dots: true,
+    //   slidesToScroll: reviews.length,
+    //   swipeToSlide: true,
+    //   slidesToShow: 4
+    // });
+  });
 }
 
 export { slick };
