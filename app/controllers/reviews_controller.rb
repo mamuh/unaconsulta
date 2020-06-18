@@ -21,7 +21,12 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @property = Property.find(params[:property_id])
+    @review = Review.find(params[:id])
+    if current_user == @review.user
+      @property = Property.find(params[:property_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update

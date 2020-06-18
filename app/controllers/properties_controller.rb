@@ -34,17 +34,6 @@ class PropertiesController < ApplicationController
   end
 
   def new
-    raise
-    # @query = params[:query]
-    # @properties = Property.geocoded
-    # @property = Property.new(address: @query)
-    # @review = Review.new
-    # @property_markers = @property.geocode
-    # @markers = [
-    #   {
-    #     lat: @property_markers[0],
-    #     lng: @property_markers[1]
-    #   }]
   end
 
   def create
