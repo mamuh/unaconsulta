@@ -31,6 +31,7 @@
     height: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
+    word-break: break-all;
   }
 
   .outer-div {
@@ -45,4 +46,11 @@
     padding: 3px;
     position: absolute;
     left: 16%;
+  }
+
+
+  .user-profile-card .card-body-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
   }

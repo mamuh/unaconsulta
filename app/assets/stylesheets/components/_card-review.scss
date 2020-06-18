@@ -21,6 +21,12 @@
     }
 }
 
+.card-review p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
+
 .search-form {
     margin-right: 4px;
     .btn {
