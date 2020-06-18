@@ -7,9 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery")
-
-
 // require('flatpickr/dist/flatpickr.min.css')
 
 
@@ -38,9 +35,6 @@ import { initStarRating } from '../plugins/init_star_rating';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { slick } from '../plugins/init_slick';
-slick();
-
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
