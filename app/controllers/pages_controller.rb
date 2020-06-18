@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @review_prop_ids = current_user.reviews.map do |review|
+      review.property_id
+    end
+    @reviews_number = @review_prop_ids.uniq.count
   end
 
   def user_reviews

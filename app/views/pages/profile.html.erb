@@ -31,10 +31,10 @@
     <div class="bg-white user-profile-review-cont p-4">
       <% if current_user.name %>
         <h2 class="mb-2">Previous reviews by <%= current_user.name %></h2>
-        <small class="pb-4"><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
+        <small><%= @reviews_number %> <%= "property".pluralize(@reviews_number) %> reviewed</small>
       <% else %>
         <h2 class="mb-2">Latest reviews by <%= current_user.first_name %></h2>
-        <small><%= current_user.reviews.count %> <%= "property".pluralize(current_user.reviews.count) %> reviewed.</small>
+        <small><%= @reviews_number %> <%= "property".pluralize(@reviews_number) %> reviewed</small>
       <% end %>
         <% current_user.reviews.first(5).each do |review| %>
           <div class="user-profile-card my-3">
