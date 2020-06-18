@@ -1,56 +1,15 @@
-// New Style
-.content-container {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.content {
-  max-width: 58%;
-}
-
-.review-content-container {
-  // height: 532px;
+.small-photos {
+  height: 30vh;
   // overflow: scroll;
-  margin-left: 15px;
 }
-
-.card-review {
-  padding: 10px;
-  border-radius: 0px !important;
-}
-
-.thumb-photos {
-  display: flex;
-  // width: 100px;
-}
-
-#card-container-review {
-  .draggable {
-    height: 530px !important;
-  }
-}
-
-
-
-// New style end here
-
-// .small-photos {
-//   // overflow: scroll;
-// }
 
 .fa-star {
   color: #f2e63a;
 }
 
-// .review-content-container {
-//   height: 70vh;
-//   // overflow: scroll;
-//   margin-left: 5px;
-// }
-
-.slick-slide {
-  margin: 0 5px;
+.review-content-container {
+  height: 70vh;
+  // overflow: scroll;
 }
 
 #smoll-pic:hover {
@@ -114,7 +73,7 @@
 /* The Close Button */
 .close {
   position: absolute;
-  top: 30px;
+  top: 90px;
   right: 400px;
   color: #f1f1f1;
   font-size: 60px;
