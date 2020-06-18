@@ -1,15 +1,14 @@
-<!-- Title -->
 <h1>Reviews for property in <%= @property.address.split(",").first %>, <%= @property.address.split(",")[-2] %></h1>
 
 <%= link_to "<< Back to search results", {action: "find",  query: @property.address }  %>
 
-
-<div class="content-container">
-  <div class="content">
+<br><br>
+<div class="row">
+  <div class="col-xs-12 col-lg-7">
     
     <div class="review-photos-container">
       
-      <div class="property-photos main-photo bg-dark mb-2">
+      <div class="property-photos main-photo bg-dark mb-2 rounded">
       </div>
       
       <div class="property-photos small-photos d-flex justify-content-between flex-wrap mb-3">
@@ -25,12 +24,12 @@
     
   </div>
   
-  <!-- Cards review container -->
-  <div class="review-content-container" id="card-container-review">
+  
+  <div class="review-content-container col-xs-12 col-lg-5">
     
     <% @property.reviews.order("created_at desc").each do |review| %>
-    <!-- Card review -->
-    <div class="card-review bg-white mb-3">
+    
+    <div class="card-review bg-white p-3 rounded mb-3 shadow">
       <div class="d-flex justify-content-between">
         <% if review.user.name %>
         <strong>Reviewed by <%= review.user.name %></strong>
@@ -82,3 +81,9 @@
   }
 </style>
 
+<!-- <div class="your-class">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
+ -->
