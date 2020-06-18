@@ -28,7 +28,7 @@
 
     <% @property.reviews.order("created_at desc").each do |review| %>
 
-    <div class="card-review bg-white p-3 rounded mb-3 shadow">
+    <div class="card-review bg-white p-3 rounded mb-3">
       <div class="d-flex justify-content-between">
         <% if review.user.name %>
           <strong style="font-weight: 600;">Reviewed by <%= review.user.name %></strong>
