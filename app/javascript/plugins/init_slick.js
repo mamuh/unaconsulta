@@ -1,5 +1,7 @@
 import $ from 'jquery';
+window.$ = window.jQuery = $;
 import 'slick-carousel';
+
 
 // const reviews = document.querySelectorAll('.card-review');
 

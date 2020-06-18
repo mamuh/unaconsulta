@@ -7,7 +7,6 @@ const code = (event) => {
 
 const code2 = (event) => {
   // event.preventDefault();
-  console.log("oiii222!")
   const form = document.getElementById('main-form');
   form.action = 'properties/find';
   // form.submit();
