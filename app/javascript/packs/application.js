@@ -39,7 +39,6 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { slick } from '../plugins/init_slick';
-slick();
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -49,4 +48,5 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
   initStarRating();
   initFlatpickr();
+  slick();
 });
