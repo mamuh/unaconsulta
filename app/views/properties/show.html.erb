@@ -31,9 +31,9 @@
     <div class="card-review bg-white p-3 rounded mb-3 shadow">
       <div class="d-flex justify-content-between">
         <% if review.user.name %>
-        <strong>Reviewed by <%= review.user.name %></strong>
+          <strong style="font-weight: 600;">Reviewed by <%= review.user.name %></strong>
         <% else %>
-        <strong>Reviewed by <%= review.user.first_name %></strong>
+          <strong style="font-weight: 600;">Reviewed by <%= review.user.first_name %></strong>
         <% end %>
         <p><%= '<i class="fas fa-star"></i>'.html_safe * review.stars %></p>
       </div>

@@ -26,9 +26,9 @@
     <% if @properties.size > 0 %>
       <div class="d-block cards-container">
         <% @properties.each do |prop| %>
-        <div class="card-review d-flex mb-5 mr-5 bg-white">
+        <div class="card-review d-flex mb-4 mr-3 bg-white">
           <% if prop&.reviews&.last&.photos&.attached? %>
-            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 150, height: 170) %>
+            <%= cl_image_tag(prop.reviews.last.photos&.last.key, crop: :fill, width: 170, height: 150) %>
           <% else %>
             <%#= cl_image_tag(review.photos&.last.key, crop: :fit, width: 200) %>
           <% end %>
