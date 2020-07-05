@@ -12,6 +12,10 @@ textarea#content-review {
 	display: flex;
 }
 
+.flex-fields {
+  display: flex;
+}
+
 .form-fields .select-fields {
 	display: flex;
 	flex-direction: column;
@@ -28,4 +32,37 @@ textarea#content-review {
 	background-color: #f8f8f8;
 	outline: none;
 	text-align: center;
+}
+
+.back-property {
+  padding-bottom: 20px;
+}
+
+
+@media (max-width: 900px) {
+  .form-fields: {
+    display: block !important;
+  }
+
+  .form-group {
+    display: block !important;
+  }
+
+  textarea#content-review {
+    width: 100%;
+    height: 25vh;
+  }
+
+  .flex-fields {
+    display: block;
+  }
+
+  .h2-review {
+    margin-bottom: 15px !important;
+    margin-top: 20px;
+  }
+
+  .select-fields {
+    margin-bottom: 15px;
+  }
 }

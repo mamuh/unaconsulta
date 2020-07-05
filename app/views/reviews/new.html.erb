@@ -1,10 +1,10 @@
 
-<h2 class="mb-5">Reviewing property in <%= @property.address %></h2>
+<h2 class="mb-5 h2-review">Reviewing property in <%= @property.address %></h2>
 
 
 <%= simple_form_for [@property, @review], class: 'form-section' do |f| %>
 
-<div class="d-flex">
+<div class="flex-fields">
   <%= f.input :content, input_html: { id: 'content-review', class: "bg-white" }, label: "Tell us about your experience with this property" %>
   <div class="select-fields">
     <%= f.input :checkin, input_html: {id: "booking_start_date", class: "bg-white"}, as: :string, type: :text, label: "Date you moved in" %>
@@ -17,4 +17,4 @@
 
 <% end %>
 
-<%= link_to "<< Back to property", property_path(@property) %>
+<%= link_to "<< Back to property", property_path(@property), class: "back-property" %>
