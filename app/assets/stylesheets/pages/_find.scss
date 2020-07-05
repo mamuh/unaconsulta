@@ -48,9 +48,6 @@
 }
 
 @media (max-width: 900px) {
-  .d-flex {
-    display: block !important;
-  }
 
   .cards-container {
     width: 100%;
@@ -58,6 +55,14 @@
 
   #map {
     height: 30vh;
+  }
+
+  .no-reviews {
+    display: block !important;
+  }
+
+  .reviews-display {
+    display: block !important;
   }
 
   .ap-input-icon svg {
