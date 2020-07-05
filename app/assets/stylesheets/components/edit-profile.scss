@@ -66,3 +66,9 @@
 	align-items: baseline;
 	justify-content: space-between;
 }
+
+@media (max-width: 900px)  {
+  .edit-container {
+    width: 100%;
+  }
+}
