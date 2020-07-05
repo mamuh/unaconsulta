@@ -54,3 +54,18 @@
     overflow: hidden;
     word-break: break-all;
   }
+
+  @media (max-width: 900px)  {
+    .user-review-card {
+      display: block;
+      height: auto;
+    }
+
+    .small-pic {
+      width: 100%;
+    }
+
+    .user-page-review-infos {
+      padding: 7px 0;
+    }
+  }
