@@ -204,3 +204,21 @@
     color: white;
 }
 
+@media (max-width: 900px) {
+  .btn-sign-in {
+    padding: 3px;
+    width: 70px;
+    padding-left: 7px;
+  }
+
+  .btn-sign-up {
+    padding: 3px;
+    width: 70px;
+  }
+
+  nav ul .btn-sign-in, nav ul .btn-sign-up {
+    margin-left: 5px !important;
+    text-align: center;
+  }
+}
+

@@ -18,3 +18,27 @@
 .card-body-content {
 
 }
+
+@media (max-width: 900px) {
+  .profile-page-main {
+    display: block !important;
+  }
+
+  .user-profile {
+    width: 100%;
+  }
+
+  .user-profile-review-cont {
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .photo .avatar-lg {
+    width: 180px;
+    height: 180px;
+  }
+}

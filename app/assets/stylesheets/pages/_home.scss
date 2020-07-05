@@ -16,6 +16,8 @@ header .header-content p {
 	font-size: 18px;
 	line-height: 24px;
 	text-align: left;
+  font-weight: 600;
+  width: 50%;
 }
 
 header .header-content h1 {
@@ -124,7 +126,7 @@ header {
     display: flex;
     flex-direction: column;
     flex: 0 0 40%;
-    justify-content: space-between;
+    // justify-content: space-between;
     img.imagem-maior {
       width: 100%;
     }
@@ -136,5 +138,63 @@ header {
         width: 49%;
       }
     }
+  }
+}
+
+
+@media (max-width: 900px) {
+  header .header-content h1 {
+    font-size: 2rem;
+    font-family: "Poppins";
+    color: #fff;
+    text-align: left !important;
+    }
+
+  header .header-content p {
+    font-weight: 300; width: 90% !important;
+  }
+
+  #main-form {
+    display: flex;
+    align-items: center;
+    width: 90%;
+  }
+
+  #main-form .algolia-places {
+    width: 100%;
+    input {
+      background-color: #e2e2e2;
+      color: grey;
+    }
+  }
+   #main-form .ap-input-icon svg {
+      display: none;
+    }
+  .text-city {
+    display: none;
+  }
+
+  .imagens-card-home {
+    display: none;
+  }
+
+  .propaganda {
+    display: block;
+    .text-reviews {
+      padding: 0;
+    }
+  }
+
+  #local {
+    margin-bottom: 0;
+  }
+
+  .home-btn {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .banner-buttons {
+    display: none !important;
   }
 }
