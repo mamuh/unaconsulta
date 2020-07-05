@@ -43,6 +43,24 @@
 	}
 }
 
-@media (max-width: 900px) {
+#map {
+  height: 70vh;
+}
 
+@media (max-width: 900px) {
+  .d-flex {
+    display: block !important;
+  }
+
+  .cards-container {
+    width: 100%;
+  }
+
+  #map {
+    height: 30vh;
+  }
+
+  .ap-input-icon svg {
+    display: none;
+  }
 }

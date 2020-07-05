@@ -1,6 +1,6 @@
 <div class="py-5 find-review">
   <% if @properties.size == 0 %>
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="no-reviews d-flex align-items-center justify-content-center">
       <h5>There are no reviews yet for this property in "<strong><%= @query %></strong>"</h5>
       <%= link_to "Review it >", {action: "create",  query: params[:query] }, method: :post,  class: "btn btn-review ml-3"  %>
     </div>
@@ -58,7 +58,7 @@
       </div>
     <% end %>
     <div id="map"
-        style="width: 100%; height: 70vh;"
+        style="width: 100%;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
